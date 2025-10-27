@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-24T16:33:52.906928" rpa="false" schemaversion="5">
+<suite id="s1" name="Negative Tests Api" source="C:\Users\emanu\Downloads\cinema-tests\tests\api\negative_tests_api.robot">
+<test id="s1-t1" name="Buscar Recurso Inexistente" line="24">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:33:53.021881" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-24T16:33:53.021659" elapsed="0.000414"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:33:53.160359" level="INFO">GET Request : url=http://localhost:3000/api/v1/movies/000000000000000000000000 
+ path_url=/api/v1/movies/000000000000000000000000 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-10-24T16:33:53.160542" level="INFO">GET Response : url=http://localhost:3000/api/v1/movies/000000000000000000000000 
+ status=404, reason=Not Found 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '45', 'ETag': 'W/"2d-76yzoZ3aJF1oDN8vFKpqErDRmpM"', 'Date': 'Fri, 24 Oct 2025 19:33:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":false,"message":"Movie not found"} 
+ </msg>
+<msg time="2025-10-24T16:33:53.160706" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/movies/000000000000000000000000</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.022342" elapsed="0.138391"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-24T16:33:53.162443" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>404</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.161952" elapsed="0.000551"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:33:53.163090" level="INFO">{'success': False, 'message': 'Movie not found'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.162724" elapsed="0.000403"/>
+</kw>
+<doc>Testa se a API retorna 404 ao buscar recurso que não existe</doc>
+<status status="PASS" start="2025-10-24T16:33:53.020322" elapsed="0.143066"/>
+</test>
+<test id="s1-t2" name="Enviar Payload Inválido" line="31">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:33:53.165056" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-24T16:33:53.164936" elapsed="0.000250"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-24T16:33:53.165599" level="INFO">&amp;{body} = { invalid_field=xyz }</msg>
+<var>&amp;{body}</var>
+<arg>invalid_field=xyz</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.165357" elapsed="0.000268"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:33:53.298942" level="INFO">POST Request : url=http://localhost:3000/api/v1/auth/login 
+ path_url=/api/v1/auth/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '24', 'Content-Type': 'application/json'} 
+ body=b'{"invalid_field": "xyz"}' 
+ </msg>
+<msg time="2025-10-24T16:33:53.299020" level="INFO">POST Response : url=http://localhost:3000/api/v1/auth/login 
+ status=401, reason=Unauthorized 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '55', 'ETag': 'W/"37-5uDpJTljPBecOPs/j7OXFdPRcmQ"', 'Date': 'Fri, 24 Oct 2025 19:33:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":false,"message":"Invalid email or password"} 
+ </msg>
+<msg time="2025-10-24T16:33:53.299134" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/auth/login</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.165809" elapsed="0.133348"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-24T16:33:53.300024" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>401</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.299524" elapsed="0.000566"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:33:53.300833" level="INFO">{'success': False, 'message': 'Invalid email or password'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.300386" elapsed="0.000499"/>
+</kw>
+<doc>Testa se a API retorna 401 ao enviar payload inválido</doc>
+<status status="PASS" start="2025-10-24T16:33:53.164485" elapsed="0.136610"/>
+</test>
+<test id="s1-t3" name="Token Expirado Ou Inválido" line="39">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:33:53.302501" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-24T16:33:53.302298" elapsed="0.000353"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-24T16:33:53.303237" level="INFO">&amp;{headers} = { Authorization=Bearer invalidtoken123 }</msg>
+<var>&amp;{headers}</var>
+<arg>Authorization=Bearer ${INVALID_TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.302952" elapsed="0.000309"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:33:53.306814" level="INFO">GET Request : url=http://localhost:3000/api/v1/reservations/me 
+ path_url=/api/v1/reservations/me 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer invalidtoken123'} 
+ body=None 
+ </msg>
+<msg time="2025-10-24T16:33:53.306913" level="INFO">GET Response : url=http://localhost:3000/api/v1/reservations/me 
+ status=401, reason=Unauthorized 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '65', 'ETag': 'W/"41-TJq3LYiwj1On+7IZ17oLU5tM1Zs"', 'Date': 'Fri, 24 Oct 2025 19:33:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":false,"message":"Not authorized to access this route"} 
+ </msg>
+<msg time="2025-10-24T16:33:53.307023" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/reservations/me</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.303527" elapsed="0.003519"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-24T16:33:53.308026" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>401</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.307549" elapsed="0.000528"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:33:53.308688" level="INFO">{'success': False, 'message': 'Not authorized to access this route'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:33:53.308311" elapsed="0.000414"/>
+</kw>
+<doc>Testa se a API retorna 401 ao acessar recurso protegido com token inválido</doc>
+<status status="PASS" start="2025-10-24T16:33:53.301558" elapsed="0.007351"/>
+</test>
+<status status="PASS" start="2025-10-24T16:33:52.908502" elapsed="0.401166"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Negative Tests Api" id="s1" pass="3" fail="0" skip="0">Negative Tests Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

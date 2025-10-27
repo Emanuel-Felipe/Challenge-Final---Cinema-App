@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-24T16:07:35.158773" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Ui &amp; Movies Ui &amp; Booking Flow &amp; Auth Api &amp; Sessions Api">
+<suite id="s1-s1" name="Login Ui" source="C:\Users\emanu\Downloads\cinema-tests\tests\ui\login_ui.robot">
+<test id="s1-s1-t1" name="Login UI com credenciais válidas" line="10">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-10-24T16:07:35.466960" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\emanu\\Downloads\\cinema-tests\\results_priority1\\browser\\traces\\temp\\bfea31cd-56c0-4222-97d1-62f8c767b2b5"}</msg>
+<msg time="2025-10-24T16:07:35.506008" level="INFO">Starting Browser process C:\Users\emanu\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:53584</msg>
+<msg time="2025-10-24T16:07:37.779224" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\emanu\\Downloads\\cinema-tests\\results_priority1\\browser\\traces\\temp\\bfea31cd-56c0-4222-97d1-62f8c767b2b5"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-10-24T16:07:35.466163" elapsed="2.313264"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-10-24T16:07:37.781744" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2025-10-24T16:07:37.806110" level="INFO">Successfully created context. </msg>
+<msg time="2025-10-24T16:07:37.806349" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-10-24T16:07:37.779868" elapsed="0.026631"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-10-24T16:07:39.940306" level="INFO">Successfully initialized new page object and opened url: http://localhost:3002/login</msg>
+<arg>${FRONT_URL}login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-10-24T16:07:37.807384" elapsed="2.133181"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-24T16:07:39.941506" level="INFO">Fills the text 'teste@gmail.com' in the given field.</msg>
+<arg>id=email</arg>
+<arg>${EMAIL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:39.940919" elapsed="0.118689"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-24T16:07:40.060752" level="INFO">Fills the text 'teste123' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:40.059984" elapsed="0.022353"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:40.083420" level="INFO">Clicks the element 'css=button.login-btn'.</msg>
+<arg>css=button.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:40.082801" elapsed="0.156232"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:40.457261" level="INFO">Waited for Element with selector text="Login realizado com sucesso!" at state visible</msg>
+<arg>text="Login realizado com sucesso!"</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:40.239654" elapsed="0.217822"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-10-24T16:07:40.707355" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-24T16:07:40.457845" elapsed="0.249667"/>
+</kw>
+<doc>Testa o login via interface web e valida mensagem de sucesso</doc>
+<status status="PASS" start="2025-10-24T16:07:35.465153" elapsed="5.242689"/>
+</test>
+<status status="PASS" start="2025-10-24T16:07:35.185794" elapsed="5.530414"/>
+</suite>
+<suite id="s1-s2" name="Movies Ui" source="C:\Users\emanu\Downloads\cinema-tests\tests\ui\movies_ui.robot">
+<test id="s1-s2-t1" name="Visualizar Lista de Filmes na Home" line="9">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-10-24T16:07:40.730812" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\emanu\\Downloads\\cinema-tests\\results_priority1\\browser\\traces\\temp\\c9ef2408-3b4a-46a2-8ea3-4dbdb853a2d6"}</msg>
+<msg time="2025-10-24T16:07:40.956215" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\emanu\\Downloads\\cinema-tests\\results_priority1\\browser\\traces\\temp\\c9ef2408-3b4a-46a2-8ea3-4dbdb853a2d6"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-10-24T16:07:40.730108" elapsed="0.226490"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-10-24T16:07:40.963076" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2025-10-24T16:07:40.981459" level="INFO">Successfully created context. </msg>
+<msg time="2025-10-24T16:07:40.981635" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-10-24T16:07:40.960642" elapsed="0.021174"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-10-24T16:07:41.528106" level="INFO">Successfully initialized new page object and opened url: http://localhost:3002/</msg>
+<arg>${FRONT_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-10-24T16:07:40.982576" elapsed="0.545728"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:41.529344" level="INFO">🕐 Aguardando carregamento da página inicial...</msg>
+<arg>🕐 Aguardando carregamento da página inicial...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:41.528665" elapsed="0.001461"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:41.846534" level="INFO">Waited for Element with selector css=a.btn-primary[href^="/movies/"] &gt;&gt; nth=0 at state visible</msg>
+<arg>css=a.btn-primary[href^="/movies/"] &gt;&gt; nth=0</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:41.530592" elapsed="0.316226"/>
+</kw>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-10-24T16:07:41.854639" level="INFO">${filmes} = 3</msg>
+<var>${filmes}</var>
+<arg>css=a.btn-primary[href^="/movies/"]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:41.847184" elapsed="0.007501"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:41.855713" level="INFO">✅ Foram encontrados 3 filmes exibidos na home.</msg>
+<arg>✅ Foram encontrados ${filmes} filmes exibidos na home.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:41.855045" elapsed="0.000732"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${filmes} &gt; 0</arg>
+<arg>msg=❌ Nenhum filme foi encontrado na página inicial.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-24T16:07:41.855989" elapsed="0.000356"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-10-24T16:07:42.071431" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-24T16:07:41.856537" elapsed="0.215068"/>
+</kw>
+<doc>Garante que os filmes são exibidos corretamente na página inicial.</doc>
+<status status="PASS" start="2025-10-24T16:07:40.728070" elapsed="1.343969"/>
+</test>
+<test id="s1-s2-t2" name="Clicar Em Filme E Ver Detalhes" line="24">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-10-24T16:07:42.080610" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\emanu\\Downloads\\cinema-tests\\results_priority1\\browser\\traces\\temp\\1e3f67dd-8eef-453f-8a71-e3923b44c3b4"}</msg>
+<msg time="2025-10-24T16:07:42.295611" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\emanu\\Downloads\\cinema-tests\\results_priority1\\browser\\traces\\temp\\1e3f67dd-8eef-453f-8a71-e3923b44c3b4"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-10-24T16:07:42.079694" elapsed="0.216398"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-10-24T16:07:42.300788" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2025-10-24T16:07:42.320564" level="INFO">Successfully created context. </msg>
+<msg time="2025-10-24T16:07:42.320785" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-10-24T16:07:42.298032" elapsed="0.022872"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-10-24T16:07:42.844067" level="INFO">Successfully initialized new page object and opened url: http://localhost:3002/</msg>
+<arg>${FRONT_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-10-24T16:07:42.321811" elapsed="0.522457"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:42.844941" level="INFO">🎬 Clicando no primeiro filme disponível...</msg>
+<arg>🎬 Clicando no primeiro filme disponível...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:42.844649" elapsed="0.000345"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:42.845700" level="INFO">Clicks the element 'css=a.btn-primary[href^="/movies/"] &gt;&gt; nth=0'.</msg>
+<arg>css=a.btn-primary[href^="/movies/"] &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:42.845222" elapsed="1.272797"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:44.118778" level="INFO">🕐 Aguardando elementos da página de detalhes do filme...</msg>
+<arg>🕐 Aguardando elementos da página de detalhes do filme...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:44.118364" elapsed="0.000496"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:45.448890" level="INFO">Waited for Element with selector css=a.btn-primary.session-button &gt;&gt; nth=0 at state visible</msg>
+<arg>css=a.btn-primary.session-button &gt;&gt; nth=0</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:44.119194" elapsed="1.329917"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:45.449737" level="INFO">✅ Página de detalhes carregada com sucesso.</msg>
+<arg>✅ Página de detalhes carregada com sucesso.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:45.449441" elapsed="0.000350"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:45.450327" level="INFO">✅ Botão de sessão validado com sucesso.</msg>
+<arg>✅ Botão de sessão validado com sucesso.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:45.450064" elapsed="0.000316"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-10-24T16:07:45.669635" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-24T16:07:45.450839" elapsed="0.218972"/>
+</kw>
+<doc>Verifica se ao clicar em um filme, a página de detalhes é carregada corretamente.</doc>
+<status status="PASS" start="2025-10-24T16:07:42.076827" elapsed="3.593266"/>
+</test>
+<status status="PASS" start="2025-10-24T16:07:40.722625" elapsed="4.951958"/>
+</suite>
+<suite id="s1-s3" name="Booking Flow" source="C:\Users\emanu\Downloads\cinema-tests\tests\ui\booking_flow.robot">
+<test id="s1-s3-t1" name="Fluxo Completo de Reserva" line="11">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-10-24T16:07:45.692952" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\emanu\\Downloads\\cinema-tests\\results_priority1\\browser\\traces\\temp\\57753948-7b47-4a11-aac2-d0ff60e847a8"}</msg>
+<msg time="2025-10-24T16:07:45.926399" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\emanu\\Downloads\\cinema-tests\\results_priority1\\browser\\traces\\temp\\57753948-7b47-4a11-aac2-d0ff60e847a8"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-10-24T16:07:45.692261" elapsed="0.234947"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-10-24T16:07:45.931474" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2025-10-24T16:07:45.948223" level="INFO">Successfully created context. </msg>
+<msg time="2025-10-24T16:07:45.948366" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-10-24T16:07:45.928783" elapsed="0.019700"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-10-24T16:07:46.481487" level="INFO">Successfully initialized new page object and opened url: http://localhost:3002/login</msg>
+<arg>${FRONT_URL}login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-10-24T16:07:45.949519" elapsed="0.532188"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-24T16:07:46.482777" level="INFO">Fills the text 'teste@gmail.com' in the given field.</msg>
+<arg>id=email</arg>
+<arg>${EMAIL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:46.482133" elapsed="0.107146"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-24T16:07:46.590372" level="INFO">Fills the text 'teste123' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:46.589724" elapsed="0.016968"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:46.607678" level="INFO">Clicks the element 'css=button.login-btn'.</msg>
+<arg>css=button.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:46.607068" elapsed="0.153046"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:46.972451" level="INFO">Waited for Element with selector text="Login realizado com sucesso!" at state visible</msg>
+<arg>text="Login realizado com sucesso!"</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:46.760445" elapsed="0.212201"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:46.973654" level="INFO">Clicks the element 'css=a.btn-primary.btn-lg'.</msg>
+<arg>css=a.btn-primary.btn-lg</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:46.973036" elapsed="0.993740"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:48.082793" level="INFO">Waited for Element with selector css=a.btn-primary[href^="/movies/"] &gt;&gt; nth=0 at state visible</msg>
+<arg>css=a.btn-primary[href^="/movies/"] &gt;&gt; nth=0</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:47.967239" elapsed="0.115800"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:48.084289" level="INFO">Clicks the element 'css=a.btn-primary[href^="/movies/"] &gt;&gt; nth=0'.</msg>
+<arg>css=a.btn-primary[href^="/movies/"] &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:48.083630" elapsed="0.070819"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:49.979312" level="INFO">Waited for Element with selector css=a.btn-primary.session-button &gt;&gt; nth=0 at state visible</msg>
+<arg>css=a.btn-primary.session-button &gt;&gt; nth=0</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:48.155096" elapsed="1.824434"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:49.980687" level="INFO">Clicks the element 'css=a.btn-primary.session-button &gt;&gt; nth=0'.</msg>
+<arg>css=a.btn-primary.session-button &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:49.979997" elapsed="0.065308"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:50.255036" level="INFO">Waited for Element with selector css=button.seat.available &gt;&gt; nth=0 at state visible</msg>
+<arg>css=button.seat.available &gt;&gt; nth=0</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:50.045694" elapsed="0.209548"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:50.256226" level="INFO">Clicks the element 'css=button.seat.available &gt;&gt; nth=0'.</msg>
+<arg>css=button.seat.available &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:50.255606" elapsed="0.029087"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:50.293269" level="INFO">Waited for Element with selector css=button.checkout-button at state visible</msg>
+<arg>css=button.checkout-button</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:50.285002" elapsed="0.008539"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:50.294427" level="INFO">Clicks the element 'css=button.checkout-button'.</msg>
+<arg>css=button.checkout-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:50.293847" elapsed="0.064016"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:50.365209" level="INFO">Waited for Element with selector css=div.payment-method &gt;&gt; nth=0 at state visible</msg>
+<arg>css=div.payment-method &gt;&gt; nth=0</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:50.358292" elapsed="0.007096"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:50.366330" level="INFO">Clicks the element 'css=div.payment-method &gt;&gt; nth=0'.</msg>
+<arg>css=div.payment-method &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:50.365861" elapsed="0.046221"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:50.418657" level="INFO">Waited for Element with selector css=button.btn-checkout at state visible</msg>
+<arg>css=button.btn-checkout</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:50.412482" elapsed="0.006399"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-24T16:07:50.419892" level="INFO">Clicks the element 'css=button.btn-checkout'.</msg>
+<arg>css=button.btn-checkout</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-24T16:07:50.419240" elapsed="0.047356"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-24T16:07:51.295200" level="INFO">Waited for Element with selector text="Reserva Confirmada!" at state visible</msg>
+<arg>text="Reserva Confirmada!"</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-24T16:07:50.466948" elapsed="0.828439"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-10-24T16:07:51.531494" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.295797" elapsed="0.235946"/>
+</kw>
+<doc>Realiza login, seleciona filme, assento e finaliza compra</doc>
+<status status="PASS" start="2025-10-24T16:07:45.689728" elapsed="5.842340"/>
+</test>
+<status status="PASS" start="2025-10-24T16:07:45.680750" elapsed="5.855500"/>
+</suite>
+<suite id="s1-s4" name="Auth Api" source="C:\Users\emanu\Downloads\cinema-tests\tests\api\auth_api.robot">
+<test id="s1-s4-t1" name="Login com credenciais válidas" line="13">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:51.624934" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-24T16:07:51.624775" elapsed="0.000363"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-24T16:07:51.625754" level="INFO">&amp;{body} = { email=teste@gmail.com | password=teste123 }</msg>
+<var>&amp;{body}</var>
+<arg>email=${VALID_EMAIL}</arg>
+<arg>password=${VALID_PASS}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.625351" elapsed="0.000435"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:51.759708" level="INFO">POST Request : url=http://localhost:3000/api/v1/auth/login 
+ path_url=/api/v1/auth/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '52', 'Content-Type': 'application/json'} 
+ body=b'{"email": "teste@gmail.com", "password": "teste123"}' 
+ </msg>
+<msg time="2025-10-24T16:07:51.759802" level="INFO">POST Response : url=http://localhost:3000/api/v1/auth/login 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '295', 'ETag': 'W/"127-9L8FMRCanLEpQtL9e3vDv3UBU2A"', 'Date': 'Fri, 24 Oct 2025 19:07:51 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":true,"data":{"_id":"68fbb75f896acea426cced4a","name":"Teste","email":"teste@gmail.com","role":"user","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZmJiNzVmODk2YWNlYTQyNmNjZWQ0YSIsImlhdCI6MTc2MTMzMjg3MSwiZXhwIjoxNzY1MjIwODcxfQ.JqxxGK3yx7eVMdg5nIENlOF9YZ-q3fKpTm0V_7vORYk"}} 
+ </msg>
+<msg time="2025-10-24T16:07:51.759909" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/auth/login</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.626027" elapsed="0.133906"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-24T16:07:51.760603" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.760188" elapsed="0.000467"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:51.761198" level="INFO">{'success': True, 'data': {'_id': '68fbb75f896acea426cced4a', 'name': 'Teste', 'email': 'teste@gmail.com', 'role': 'user', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZmJiNzVmODk2YWNlYTQyNmNjZWQ0YSIsImlhdCI6MTc2MTMzMjg3MSwiZXhwIjoxNzY1MjIwODcxfQ.JqxxGK3yx7eVMdg5nIENlOF9YZ-q3fKpTm0V_7vORYk'}}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.760851" elapsed="0.000384"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-10-24T16:07:51.761712" level="INFO">Length is 2.</msg>
+<arg>${response.json()}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.761388" elapsed="0.000359"/>
+</kw>
+<doc>Testa login com usuário válido via API</doc>
+<status status="PASS" start="2025-10-24T16:07:51.624135" elapsed="0.137800"/>
+</test>
+<test id="s1-s4-t2" name="Login com credenciais inválidas" line="22">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:51.762767" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-24T16:07:51.762663" elapsed="0.000236"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-24T16:07:51.763318" level="INFO">&amp;{body} = { email=teste@gmail.com | password=senhaerrada }</msg>
+<var>&amp;{body}</var>
+<arg>email=${VALID_EMAIL}</arg>
+<arg>password=${INVALID_PASS}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.763076" elapsed="0.000264"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:51.890226" level="INFO">POST Request : url=http://localhost:3000/api/v1/auth/login 
+ path_url=/api/v1/auth/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '55', 'Content-Type': 'application/json'} 
+ body=b'{"email": "teste@gmail.com", "password": "senhaerrada"}' 
+ </msg>
+<msg time="2025-10-24T16:07:51.890348" level="INFO">POST Response : url=http://localhost:3000/api/v1/auth/login 
+ status=401, reason=Unauthorized 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '55', 'ETag': 'W/"37-5uDpJTljPBecOPs/j7OXFdPRcmQ"', 'Date': 'Fri, 24 Oct 2025 19:07:51 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":false,"message":"Invalid email or password"} 
+ </msg>
+<msg time="2025-10-24T16:07:51.890533" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/auth/login</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.763500" elapsed="0.127080"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-24T16:07:51.891484" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>401</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.891083" elapsed="0.000453"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:51.892157" level="INFO">{'success': False, 'message': 'Invalid email or password'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.891787" elapsed="0.000412"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.json()['message']}</arg>
+<arg>Invalid</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.892427" elapsed="0.000340"/>
+</kw>
+<doc>Testa login com usuário válido e senha incorreta</doc>
+<status status="PASS" start="2025-10-24T16:07:51.762329" elapsed="0.130628"/>
+</test>
+<test id="s1-s4-t3" name="Acessar rota protegida sem token" line="31">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:51.893975" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-24T16:07:51.893842" elapsed="0.000266"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:51.897217" level="INFO">GET Request : url=http://localhost:3000/api/v1/reservations/me 
+ path_url=/api/v1/reservations/me 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-10-24T16:07:51.897380" level="INFO">GET Response : url=http://localhost:3000/api/v1/reservations/me 
+ status=401, reason=Unauthorized 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '65', 'ETag': 'W/"41-TJq3LYiwj1On+7IZ17oLU5tM1Zs"', 'Date': 'Fri, 24 Oct 2025 19:07:51 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":false,"message":"Not authorized to access this route"} 
+ </msg>
+<msg time="2025-10-24T16:07:51.897624" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/reservations/me</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.894273" elapsed="0.003417"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-24T16:07:51.898520" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>401</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.898089" elapsed="0.000483"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:51.899139" level="INFO">{'success': False, 'message': 'Not authorized to access this route'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.898802" elapsed="0.000373"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.json()['message']}</arg>
+<arg>Not authorized</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.899331" elapsed="0.000637"/>
+</kw>
+<doc>Testa acesso a rota protegida sem autenticação</doc>
+<status status="PASS" start="2025-10-24T16:07:51.893454" elapsed="0.006963"/>
+</test>
+<status status="PASS" start="2025-10-24T16:07:51.542311" elapsed="0.358849"/>
+</suite>
+<suite id="s1-s5" name="Sessions Api" source="C:\Users\emanu\Downloads\cinema-tests\tests\api\sessions_api.robot">
+<test id="s1-s5-t1" name="Listar Sessões Disponíveis" line="10">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:51.906278" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-24T16:07:51.905661" elapsed="0.000768"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:52.215987" level="INFO">GET Request : url=http://localhost:3000/api/v1/sessions 
+ path_url=/api/v1/sessions 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-10-24T16:07:52.216080" level="INFO">GET Response : url=http://localhost:3000/api/v1/sessions 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '42918', 'ETag': 'W/"a7a6-yzeFHGETJVb4zL93hOYZ1ZUeQTQ"', 'Date': 'Fri, 24 Oct 2025 19:07:52 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":true,"count":10,"pagination":{"next":{"page":2,"limit":10}},"data":[{"_id":"68fbb6b7db724fb5eded0eec","movie":{"_id":"68fbb6b6db724fb5eded0edc","title":"The Avengers","duration":143,"poster":"avengers.jpg","id":"68fbb6b6db724fb5eded0edc"},"theater":{"_id":"68fbb6b7db724fb5eded0edf","name":"Theater 1","type":"standard","id":"68fbb6b7db724fb5eded0edf"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"occupied"},{"row":"A","number":2,"status":"occupied"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"A","number":9,"status":"available"},{"row":"A","number":10,"status":"available"},{"row":"A","number":11,"status":"available"},{"row":"A","number":12,"status":"available"},{"row":"A","number":13,"status":"available"},{"row":"A","number":14,"status":"available"},{"row":"A","number":15,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":"B","number":5,"status":"available"},{"row":"B","number":6,"status":"available"},{"row":"B","number":7,"status":"available"},{"row":"B","number":8,"status":"available"},{"row":"B","number":9,"status":"available"},{"row":"B","number":10,"status":"available"},{"row":"B","number":11,"status":"available"},{"row":"B","number":12,"status":"available"},{"row":"B","number":13,"status":"available"},{"row":"B","number":14,"status":"available"},{"row":"B","number":15,"status":"available"},{"row":"C","number":1,"status":"available"},{"row":"C","number":2,"status":"available"},{"row":"C","number":3,"status":"available"},{"row":"C","number":4,"status":"available"},{"row":"C","number":5,"status":"available"},{"row":"C","number":6,"status":"available"},{"row":"C","number":7,"status":"available"},{"row":"C","number":8,"status":"available"},{"row":"C","number":9,"status":"available"},{"row":"C","number":10,"status":"available"},{"row":"C","number":11,"status":"available"},{"row":"C","number":12,"status":"available"},{"row":"C","number":13,"status":"available"},{"row":"C","number":14,"status":"available"},{"row":"C","number":15,"status":"available"},{"row":"D","number":1,"status":"available"},{"row":"D","number":2,"status":"available"},{"row":"D","number":3,"status":"available"},{"row":"D","number":4,"status":"available"},{"row":"D","number":5,"status":"available"},{"row":"D","number":6,"status":"available"},{"row":"D","number":7,"status":"available"},{"row":"D","number":8,"status":"available"},{"row":"D","number":9,"status":"available"},{"row":"D","number":10,"status":"available"},{"row":"D","number":11,"status":"available"},{"row":"D","number":12,"status":"available"},{"row":"D","number":13,"status":"available"},{"row":"D","number":14,"status":"available"},{"row":"D","number":15,"status":"available"},{"row":"E","number":1,"status":"available"},{"row":"E","number":2,"status":"available"},{"row":"E","number":3,"status":"available"},{"row":"E","number":4,"status":"available"},{"row":"E","number":5,"status":"available"},{"row":"E","number":6,"status":"available"},{"row":"E","number":7,"status":"available"},{"row":"E","number":8,"status":"available"},{"row":"E","number":9,"status":"available"},{"row":"E","number":10,"status":"available"},{"row":"E","number":11,"status":"available"},{"row":"E","number":12,"status":"available"},{"row":"E","number":13,"status":"available"},{"row":"E","number":14,"status":"available"},{"row":"E","number":15,"status":"available"},{"row":"F","number":1,"status":"available"},{"row":"F","number":2,"status":"available"},{"row":"F","number":3,"status":"available"},{"row":"F","number":4,"status":"available"},{"row":"F","number":5,"status":"available"},{"row":"F","number":6,"status":"available"},{"row":"F","number":7,"status":"available"},{"row":"F","number":8,"status":"available"},{"row":"F","number":9,"status":"available"},{"row":"F","number":10,"status":"available"},{"row":"F","number":11,"status":"available"},{"row":"F","number":12,"status":"available"},{"row":"F","number":13,"status":"available"},{"row":"F","number":14,"status":"available"},{"row":"F","number":15,"status":"available"},{"row":"G","number":1,"status":"available"},{"row":"G","number":2,"status":"available"},{"row":"G","number":3,"status":"available"},{"row":"G","number":4,"status":"available"},{"row":"G","number":5,"status":"available"},{"row":"G","number":6,"status":"available"},{"row":"G","number":7,"status":"available"},{"row":"G","number":8,"status":"available"},{"row":"G","number":9,"status":"available"},{"row":"G","number":10,"status":"available"},{"row":"G","number":11,"status":"available"},{"row":"G","number":12,"status":"available"},{"row":"G","number":13,"status":"available"},{"row":"G","number":14,"status":"available"},{"row":"G","number":15,"status":"available"},{"row":"H","number":1,"status":"available"},{"row":"H","number":2,"status":"available"},{"row":"H","number":3,"status":"available"},{"row":"H","number":4,"status":"available"},{"row":"H","number":5,"status":"available"},{"row":"H","number":6,"status":"available"},{"row":"H","number":7,"status":"available"},{"row":"H","number":8,"status":"available"},{"row":"H","number":9,"status":"available"},{"row":"H","number":10,"status":"available"},{"row":"H","number":11,"status":"available"},{"row":"H","number":12,"status":"available"},{"row":"H","number":13,"status":"available"},{"row":"H","number":14,"status":"available"},{"row":"H","number":15,"status":"available"}],"createdAt":"2025-10-24T17:26:15.108Z","__v":0,"updatedAt":"2025-10-24T19:03:24.855Z","id":"68fbb6b7db724fb5eded0eec"},{"_id":"68fbb6b7db724fb5eded0ef0","movie":{"_id":"68fbb6b6db724fb5eded0edc","title":"The Avengers","duration":143,"poster":"avengers.jpg","id":"68fbb6b6db724fb5eded0edc"},"theater":{"_id":"68fbb6b7db724fb5eded0ee1","name":"Theater 3","type":"IMAX","id":"68fbb6b7db724fb5eded0ee1"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"occupied"},{"row":"A","number":2,"status":"available"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":"B","number":5,"status":"available"},{"row":"B","number":6,"status":"available"},{"row":"B","number":7,"status":"available"},{"row":"B","number":8,"status":"available"},{"row":"C","number":1,"status":"available"},{"row":"C","number":2,"status":"available"},{"row":"C","number":3,"status":"available"},{"row":"C","number":4,"status":"available"},{"row":"C","number":5,"status":"available"},{"row":"C","number":6,"status":"available"},{"row":"C","number":7,"status":"available"},{"row":"C","number":8,"status":"available"},{"row":"D","number":1,"status":"available"},{"row":"D","number":2,"status":"available"},{"row":"D","number":3,"status":"available"},{"row":"D","number":4,"status":"available"},{"row":"D","number":5,"status":"available"},{"row":"D","number":6,"status":"available"},{"row":"D","number":7,"status":"available"},{"row":"D","number":8,"status":"available"},{"row":"E","number":1,"status":"available"},{"row":"E","number":2,"status":"available"},{"row":"E","number":3,"status":"available"},{"row":"E","number":4,"status":"available"},{"row":"E","number":5,"status":"available"},{"row":"E","number":6,"status":"available"},{"row":"E","number":7,"status":"available"},{"row":"E","number":8,"status":"available"},{"row":"F","number":1,"status":"available"},{"row":"F","number":2,"status":"available"},{"row":"F","number":3,"status":"available"},{"row":"F","number":4,"status":"available"},{"row":"F","number":5,"status":"available"},{"row":"F","number":6,"status":"available"},{"row":"F","number":7,"status":"available"},{"row":"F","number":8,"status":"available"},{"row":"G","number":1,"status":"available"},{"row":"G","number":2,"status":"available"},{"row":"G","number":3,"status":"available"},{"row":"G","number":4,"status":"available"},{"row":"G","number":5,"status":"available"},{"row":"G","number":6,"status":"available"},{"row":"G","number":7,"status":"available"},{"row":"G","number":8,"status":"available"},{"row":"H","number":1,"status":"available"},{"row":"H","number":2,"status":"available"},{"row":"H","number":3,"status":"available"},{"row":"H","number":4,"status":"available"}],"createdAt":"2025-10-24T17:26:15.120Z","__v":0,"updatedAt":"2025-10-24T19:07:50.657Z","id":"68fbb6b7db724fb5eded0ef0"},{"_id":"68fbb6b7db724fb5eded0ef4","movie":{"_id":"68fbb6b6db724fb5eded0edd","title":"The Shawshank Redemption","duration":142,"poster":"shawshank.jpg","id":"68fbb6b6db724fb5eded0edd"},"theater":{"_id":"68fbb6b7db724fb5eded0ee0","name":"Theater 2","type":"3D","id":"68fbb6b7db724fb5eded0ee0"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"available"},{"row":"A","number":2,"status":"available"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"A","number":9,"status":"available"},{"row":"A","number":10,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-10-24T16:07:52.216492" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/sessions</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:07:51.906705" elapsed="0.309810"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.217249" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.216796" elapsed="0.000504"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.218995" level="INFO">${response_json} = {'success': True, 'count': 10, 'pagination': {'next': {'page': 2, 'limit': 10}}, 'data': [{'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'dur...</msg>
+<var>${response_json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.217525" elapsed="0.001504"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.220238" level="INFO">${sessions} = [{'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_i...</msg>
+<var>${sessions}</var>
+<arg>${response_json['data']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.219242" elapsed="0.001023"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.220657" level="INFO">Length is 10.</msg>
+<msg time="2025-10-24T16:07:52.220714" level="INFO">${count} = 10</msg>
+<var>${count}</var>
+<arg>${sessions}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.220543" elapsed="0.000189"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Não há sessões cadastradas no banco de dados</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.220961" elapsed="0.000209"/>
+</kw>
+<doc>Testa se a API retorna todas as sessões disponíveis</doc>
+<status status="PASS" start="2025-10-24T16:07:51.904862" elapsed="0.316548"/>
+</test>
+<test id="s1-s5-t2" name="Buscar Sessão por ID" line="20">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:52.223378" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-24T16:07:52.223128" elapsed="0.000389"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:52.475490" level="INFO">GET Request : url=http://localhost:3000/api/v1/sessions 
+ path_url=/api/v1/sessions 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-10-24T16:07:52.475634" level="INFO">GET Response : url=http://localhost:3000/api/v1/sessions 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '42918', 'ETag': 'W/"a7a6-yzeFHGETJVb4zL93hOYZ1ZUeQTQ"', 'Date': 'Fri, 24 Oct 2025 19:07:52 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":true,"count":10,"pagination":{"next":{"page":2,"limit":10}},"data":[{"_id":"68fbb6b7db724fb5eded0eec","movie":{"_id":"68fbb6b6db724fb5eded0edc","title":"The Avengers","duration":143,"poster":"avengers.jpg","id":"68fbb6b6db724fb5eded0edc"},"theater":{"_id":"68fbb6b7db724fb5eded0edf","name":"Theater 1","type":"standard","id":"68fbb6b7db724fb5eded0edf"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"occupied"},{"row":"A","number":2,"status":"occupied"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"A","number":9,"status":"available"},{"row":"A","number":10,"status":"available"},{"row":"A","number":11,"status":"available"},{"row":"A","number":12,"status":"available"},{"row":"A","number":13,"status":"available"},{"row":"A","number":14,"status":"available"},{"row":"A","number":15,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":"B","number":5,"status":"available"},{"row":"B","number":6,"status":"available"},{"row":"B","number":7,"status":"available"},{"row":"B","number":8,"status":"available"},{"row":"B","number":9,"status":"available"},{"row":"B","number":10,"status":"available"},{"row":"B","number":11,"status":"available"},{"row":"B","number":12,"status":"available"},{"row":"B","number":13,"status":"available"},{"row":"B","number":14,"status":"available"},{"row":"B","number":15,"status":"available"},{"row":"C","number":1,"status":"available"},{"row":"C","number":2,"status":"available"},{"row":"C","number":3,"status":"available"},{"row":"C","number":4,"status":"available"},{"row":"C","number":5,"status":"available"},{"row":"C","number":6,"status":"available"},{"row":"C","number":7,"status":"available"},{"row":"C","number":8,"status":"available"},{"row":"C","number":9,"status":"available"},{"row":"C","number":10,"status":"available"},{"row":"C","number":11,"status":"available"},{"row":"C","number":12,"status":"available"},{"row":"C","number":13,"status":"available"},{"row":"C","number":14,"status":"available"},{"row":"C","number":15,"status":"available"},{"row":"D","number":1,"status":"available"},{"row":"D","number":2,"status":"available"},{"row":"D","number":3,"status":"available"},{"row":"D","number":4,"status":"available"},{"row":"D","number":5,"status":"available"},{"row":"D","number":6,"status":"available"},{"row":"D","number":7,"status":"available"},{"row":"D","number":8,"status":"available"},{"row":"D","number":9,"status":"available"},{"row":"D","number":10,"status":"available"},{"row":"D","number":11,"status":"available"},{"row":"D","number":12,"status":"available"},{"row":"D","number":13,"status":"available"},{"row":"D","number":14,"status":"available"},{"row":"D","number":15,"status":"available"},{"row":"E","number":1,"status":"available"},{"row":"E","number":2,"status":"available"},{"row":"E","number":3,"status":"available"},{"row":"E","number":4,"status":"available"},{"row":"E","number":5,"status":"available"},{"row":"E","number":6,"status":"available"},{"row":"E","number":7,"status":"available"},{"row":"E","number":8,"status":"available"},{"row":"E","number":9,"status":"available"},{"row":"E","number":10,"status":"available"},{"row":"E","number":11,"status":"available"},{"row":"E","number":12,"status":"available"},{"row":"E","number":13,"status":"available"},{"row":"E","number":14,"status":"available"},{"row":"E","number":15,"status":"available"},{"row":"F","number":1,"status":"available"},{"row":"F","number":2,"status":"available"},{"row":"F","number":3,"status":"available"},{"row":"F","number":4,"status":"available"},{"row":"F","number":5,"status":"available"},{"row":"F","number":6,"status":"available"},{"row":"F","number":7,"status":"available"},{"row":"F","number":8,"status":"available"},{"row":"F","number":9,"status":"available"},{"row":"F","number":10,"status":"available"},{"row":"F","number":11,"status":"available"},{"row":"F","number":12,"status":"available"},{"row":"F","number":13,"status":"available"},{"row":"F","number":14,"status":"available"},{"row":"F","number":15,"status":"available"},{"row":"G","number":1,"status":"available"},{"row":"G","number":2,"status":"available"},{"row":"G","number":3,"status":"available"},{"row":"G","number":4,"status":"available"},{"row":"G","number":5,"status":"available"},{"row":"G","number":6,"status":"available"},{"row":"G","number":7,"status":"available"},{"row":"G","number":8,"status":"available"},{"row":"G","number":9,"status":"available"},{"row":"G","number":10,"status":"available"},{"row":"G","number":11,"status":"available"},{"row":"G","number":12,"status":"available"},{"row":"G","number":13,"status":"available"},{"row":"G","number":14,"status":"available"},{"row":"G","number":15,"status":"available"},{"row":"H","number":1,"status":"available"},{"row":"H","number":2,"status":"available"},{"row":"H","number":3,"status":"available"},{"row":"H","number":4,"status":"available"},{"row":"H","number":5,"status":"available"},{"row":"H","number":6,"status":"available"},{"row":"H","number":7,"status":"available"},{"row":"H","number":8,"status":"available"},{"row":"H","number":9,"status":"available"},{"row":"H","number":10,"status":"available"},{"row":"H","number":11,"status":"available"},{"row":"H","number":12,"status":"available"},{"row":"H","number":13,"status":"available"},{"row":"H","number":14,"status":"available"},{"row":"H","number":15,"status":"available"}],"createdAt":"2025-10-24T17:26:15.108Z","__v":0,"updatedAt":"2025-10-24T19:03:24.855Z","id":"68fbb6b7db724fb5eded0eec"},{"_id":"68fbb6b7db724fb5eded0ef0","movie":{"_id":"68fbb6b6db724fb5eded0edc","title":"The Avengers","duration":143,"poster":"avengers.jpg","id":"68fbb6b6db724fb5eded0edc"},"theater":{"_id":"68fbb6b7db724fb5eded0ee1","name":"Theater 3","type":"IMAX","id":"68fbb6b7db724fb5eded0ee1"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"occupied"},{"row":"A","number":2,"status":"available"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":"B","number":5,"status":"available"},{"row":"B","number":6,"status":"available"},{"row":"B","number":7,"status":"available"},{"row":"B","number":8,"status":"available"},{"row":"C","number":1,"status":"available"},{"row":"C","number":2,"status":"available"},{"row":"C","number":3,"status":"available"},{"row":"C","number":4,"status":"available"},{"row":"C","number":5,"status":"available"},{"row":"C","number":6,"status":"available"},{"row":"C","number":7,"status":"available"},{"row":"C","number":8,"status":"available"},{"row":"D","number":1,"status":"available"},{"row":"D","number":2,"status":"available"},{"row":"D","number":3,"status":"available"},{"row":"D","number":4,"status":"available"},{"row":"D","number":5,"status":"available"},{"row":"D","number":6,"status":"available"},{"row":"D","number":7,"status":"available"},{"row":"D","number":8,"status":"available"},{"row":"E","number":1,"status":"available"},{"row":"E","number":2,"status":"available"},{"row":"E","number":3,"status":"available"},{"row":"E","number":4,"status":"available"},{"row":"E","number":5,"status":"available"},{"row":"E","number":6,"status":"available"},{"row":"E","number":7,"status":"available"},{"row":"E","number":8,"status":"available"},{"row":"F","number":1,"status":"available"},{"row":"F","number":2,"status":"available"},{"row":"F","number":3,"status":"available"},{"row":"F","number":4,"status":"available"},{"row":"F","number":5,"status":"available"},{"row":"F","number":6,"status":"available"},{"row":"F","number":7,"status":"available"},{"row":"F","number":8,"status":"available"},{"row":"G","number":1,"status":"available"},{"row":"G","number":2,"status":"available"},{"row":"G","number":3,"status":"available"},{"row":"G","number":4,"status":"available"},{"row":"G","number":5,"status":"available"},{"row":"G","number":6,"status":"available"},{"row":"G","number":7,"status":"available"},{"row":"G","number":8,"status":"available"},{"row":"H","number":1,"status":"available"},{"row":"H","number":2,"status":"available"},{"row":"H","number":3,"status":"available"},{"row":"H","number":4,"status":"available"}],"createdAt":"2025-10-24T17:26:15.120Z","__v":0,"updatedAt":"2025-10-24T19:07:50.657Z","id":"68fbb6b7db724fb5eded0ef0"},{"_id":"68fbb6b7db724fb5eded0ef4","movie":{"_id":"68fbb6b6db724fb5eded0edd","title":"The Shawshank Redemption","duration":142,"poster":"shawshank.jpg","id":"68fbb6b6db724fb5eded0edd"},"theater":{"_id":"68fbb6b7db724fb5eded0ee0","name":"Theater 2","type":"3D","id":"68fbb6b7db724fb5eded0ee0"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"available"},{"row":"A","number":2,"status":"available"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"A","number":9,"status":"available"},{"row":"A","number":10,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-10-24T16:07:52.476047" level="INFO">${list_response} = &lt;Response [200]&gt;</msg>
+<var>${list_response}</var>
+<arg>api</arg>
+<arg>/sessions</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.223784" elapsed="0.252287"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.478095" level="INFO">${response_json} = {'success': True, 'count': 10, 'pagination': {'next': {'page': 2, 'limit': 10}}, 'data': [{'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'dur...</msg>
+<var>${response_json}</var>
+<arg>${list_response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.476385" elapsed="0.001745"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.479348" level="INFO">${sessions} = [{'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_i...</msg>
+<var>${sessions}</var>
+<arg>${response_json['data']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.478396" elapsed="0.000978"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.479711" level="INFO">Length is 10.</msg>
+<msg time="2025-10-24T16:07:52.479770" level="INFO">${count} = 10</msg>
+<var>${count}</var>
+<arg>${sessions}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.479604" elapsed="0.000185"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Não há sessões cadastradas para buscar por ID</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.479996" elapsed="0.000279"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.481088" level="INFO">${first_session} = {'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_id...</msg>
+<var>${first_session}</var>
+<arg>${sessions}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.480727" elapsed="0.000393"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.481863" level="INFO">${session_id} = 68fbb6b7db724fb5eded0eec</msg>
+<var>${session_id}</var>
+<arg>${first_session['_id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.481417" elapsed="0.000471"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:52.607543" level="INFO">GET Request : url=http://localhost:3000/api/v1/sessions/68fbb6b7db724fb5eded0eec 
+ path_url=/api/v1/sessions/68fbb6b7db724fb5eded0eec 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-10-24T16:07:52.607624" level="INFO">GET Response : url=http://localhost:3000/api/v1/sessions/68fbb6b7db724fb5eded0eec 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '6233', 'ETag': 'W/"1859-ckfYIIo4ELCIxfaAtCAZdbf36vY"', 'Date': 'Fri, 24 Oct 2025 19:07:52 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":true,"data":{"_id":"68fbb6b7db724fb5eded0eec","movie":{"_id":"68fbb6b6db724fb5eded0edc","customId":"2","title":"The Avengers","synopsis":"Earth's mightiest heroes must come together to save the world.","director":"Joss Whedon","genres":["Action","Adventure"],"duration":143,"classification":"PG-13","poster":"avengers.jpg","releaseDate":"2012-05-04T00:00:00.000Z","createdAt":"2025-10-24T17:26:14.951Z","__v":0,"updatedAt":"2025-10-24T17:26:14.952Z","id":"68fbb6b6db724fb5eded0edc"},"theater":{"_id":"68fbb6b7db724fb5eded0edf","name":"Theater 1","capacity":120,"type":"standard","createdAt":"2025-10-24T17:26:15.011Z","__v":0,"updatedAt":"2025-10-24T17:26:15.012Z","id":"68fbb6b7db724fb5eded0edf"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"occupied"},{"row":"A","number":2,"status":"occupied"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"A","number":9,"status":"available"},{"row":"A","number":10,"status":"available"},{"row":"A","number":11,"status":"available"},{"row":"A","number":12,"status":"available"},{"row":"A","number":13,"status":"available"},{"row":"A","number":14,"status":"available"},{"row":"A","number":15,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":"B","number":5,"status":"available"},{"row":"B","number":6,"status":"available"},{"row":"B","number":7,"status":"available"},{"row":"B","number":8,"status":"available"},{"row":"B","number":9,"status":"available"},{"row":"B","number":10,"status":"available"},{"row":"B","number":11,"status":"available"},{"row":"B","number":12,"status":"available"},{"row":"B","number":13,"status":"available"},{"row":"B","number":14,"status":"available"},{"row":"B","number":15,"status":"available"},{"row":"C","number":1,"status":"available"},{"row":"C","number":2,"status":"available"},{"row":"C","number":3,"status":"available"},{"row":"C","number":4,"status":"available"},{"row":"C","number":5,"status":"available"},{"row":"C","number":6,"status":"available"},{"row":"C","number":7,"status":"available"},{"row":"C","number":8,"status":"available"},{"row":"C","number":9,"status":"available"},{"row":"C","number":10,"status":"available"},{"row":"C","number":11,"status":"available"},{"row":"C","number":12,"status":"available"},{"row":"C","number":13,"status":"available"},{"row":"C","number":14,"status":"available"},{"row":"C","number":15,"status":"available"},{"row":"D","number":1,"status":"available"},{"row":"D","number":2,"status":"available"},{"row":"D","number":3,"status":"available"},{"row":"D","number":4,"status":"available"},{"row":"D","number":5,"status":"available"},{"row":"D","number":6,"status":"available"},{"row":"D","number":7,"status":"available"},{"row":"D","number":8,"status":"available"},{"row":"D","number":9,"status":"available"},{"row":"D","number":10,"status":"available"},{"row":"D","number":11,"status":"available"},{"row":"D","number":12,"status":"available"},{"row":"D","number":13,"status":"available"},{"row":"D","number":14,"status":"available"},{"row":"D","number":15,"status":"available"},{"row":"E","number":1,"status":"available"},{"row":"E","number":2,"status":"available"},{"row":"E","number":3,"status":"available"},{"row":"E","number":4,"status":"available"},{"row":"E","number":5,"status":"available"},{"row":"E","number":6,"status":"available"},{"row":"E","number":7,"status":"available"},{"row":"E","number":8,"status":"available"},{"row":"E","number":9,"status":"available"},{"row":"E","number":10,"status":"available"},{"row":"E","number":11,"status":"available"},{"row":"E","number":12,"status":"available"},{"row":"E","number":13,"status":"available"},{"row":"E","number":14,"status":"available"},{"row":"E","number":15,"status":"available"},{"row":"F","number":1,"status":"available"},{"row":"F","number":2,"status":"available"},{"row":"F","number":3,"status":"available"},{"row":"F","number":4,"status":"available"},{"row":"F","number":5,"status":"available"},{"row":"F","number":6,"status":"available"},{"row":"F","number":7,"status":"available"},{"row":"F","number":8,"status":"available"},{"row":"F","number":9,"status":"available"},{"row":"F","number":10,"status":"available"},{"row":"F","number":11,"status":"available"},{"row":"F","number":12,"status":"available"},{"row":"F","number":13,"status":"available"},{"row":"F","number":14,"status":"available"},{"row":"F","number":15,"status":"available"},{"row":"G","number":1,"status":"available"},{"row":"G","number":2,"status":"available"},{"row":"G","number":3,"status":"available"},{"row":"G","number":4,"status":"available"},{"row":"G","number":5,"status":"available"},{"row":"G","number":6,"status":"available"},{"row":"G","number":7,"status":"available"},{"row":"G","number":8,"status":"available"},{"row":"G","number":9,"status":"available"},{"row":"G","number":10,"status":"available"},{"row":"G","number":11,"status":"available"},{"row":"G","number":12,"status":"available"},{"row":"G","number":13,"status":"available"},{"row":"G","number":14,"status":"available"},{"row":"G","number":15,"status":"available"},{"row":"H","number":1,"status":"available"},{"row":"H","number":2,"status":"available"},{"row":"H","number":3,"status":"available"},{"row":"H","number":4,"status":"available"},{"row":"H","number":5,"status":"available"},{"row":"H","number":6,"status":"available"},{"row":"H","number":7,"status":"available"},{"row":"H","number":8,"status":"available"},{"row":"H","number":9,"status":"available"},{"row":"H","number":10,"status":"available"},{"row":"H","number":11,"status":"available"},{"row":"H","number":12,"status":"available"},{"row":"H","number":13,"status":"available"},{"row":"H","number":14,"status":"available"},{"row":"H","number":15,"status":"available"}],"createdAt":"2025-10-24T17:26:15.108Z","__v":0,"updatedAt":"2025-10-24T19:03:24.855Z","id":"68fbb6b7db724fb5eded0eec"}} 
+ </msg>
+<msg time="2025-10-24T16:07:52.607838" level="INFO">${session_response} = &lt;Response [200]&gt;</msg>
+<var>${session_response}</var>
+<arg>api</arg>
+<arg>/sessions/${session_id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.482103" elapsed="0.125758"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.608732" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${session_response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.608311" elapsed="0.000469"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.609476" level="INFO">${session_detail} = {'success': True, 'data': {'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'customId': '2', 'title': 'The Avengers', 'synopsis': "Earth's mightiest heroes must come tog...</msg>
+<var>${session_detail}</var>
+<arg>${session_response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.608957" elapsed="0.000542"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.609816" level="INFO">Length is 2.</msg>
+<arg>${session_detail}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.609710" elapsed="0.000140"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.610240" level="INFO">{'success': True, 'data': {'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'customId': '2', 'title': 'The Avengers', 'synopsis': "Earth's mightiest heroes must come together to save the world.", 'director': 'Joss Whedon', 'genres': ['Action', 'Adventure'], 'duration': 143, 'classification': 'PG-13', 'poster': 'avengers.jpg', 'releaseDate': '2012-05-04T00:00:00.000Z', 'createdAt': '2025-10-24T17:26:14.951Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:14.952Z', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_id': '68fbb6b7db724fb5eded0edf', 'name': 'Theater 1', 'capacity': 120, 'type': 'standard', 'createdAt': '2025-10-24T17:26:15.011Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:15.012Z', 'id': '68fbb6b7db724fb5eded0edf'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'occupied'}, {'row': 'A', 'number': 2, 'status': 'occupied'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'A', 'number': 9, 'status': 'available'}, {'row': 'A', 'number': 10, 'status': 'available'}, {'row': 'A', 'number': 11, 'status': 'available'}, {'row': 'A', 'number': 12, 'status': 'available'}, {'row': 'A', 'number': 13, 'status': 'available'}, {'row': 'A', 'number': 14, 'status': 'available'}, {'row': 'A', 'number': 15, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 9, 'status': 'available'}, {'row': 'B', 'number': 10, 'status': 'available'}, {'row': 'B', 'number': 11, 'status': 'available'}, {'row': 'B', 'number': 12, 'status': 'available'}, {'row': 'B', 'number': 13, 'status': 'available'}, {'row': 'B', 'number': 14, 'status': 'available'}, {'row': 'B', 'number': 15, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 9, 'status': 'available'}, {'row': 'C', 'number': 10, 'status': 'available'}, {'row': 'C', 'number': 11, 'status': 'available'}, {'row': 'C', 'number': 12, 'status': 'available'}, {'row': 'C', 'number': 13, 'status': 'available'}, {'row': 'C', 'number': 14, 'status': 'available'}, {'row': 'C', 'number': 15, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 9, 'status': 'available'}, {'row': 'D', 'number': 10, 'status': 'available'}, {'row': 'D', 'number': 11, 'status': 'available'}, {'row': 'D', 'number': 12, 'status': 'available'}, {'row': 'D', 'number': 13, 'status': 'available'}, {'row': 'D', 'number': 14, 'status': 'available'}, {'row': 'D', 'number': 15, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 9, 'status': 'available'}, {'row': 'E', 'number': 10, 'status': 'available'}, {'row': 'E', 'number': 11, 'status': 'available'}, {'row': 'E', 'number': 12, 'status': 'available'}, {'row': 'E', 'number': 13, 'status': 'available'}, {'row': 'E', 'number': 14, 'status': 'available'}, {'row': 'E', 'number': 15, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 9, 'status': 'available'}, {'row': 'F', 'number': 10, 'status': 'available'}, {'row': 'F', 'number': 11, 'status': 'available'}, {'row': 'F', 'number': 12, 'status': 'available'}, {'row': 'F', 'number': 13, 'status': 'available'}, {'row': 'F', 'number': 14, 'status': 'available'}, {'row': 'F', 'number': 15, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 9, 'status': 'available'}, {'row': 'G', 'number': 10, 'status': 'available'}, {'row': 'G', 'number': 11, 'status': 'available'}, {'row': 'G', 'number': 12, 'status': 'available'}, {'row': 'G', 'number': 13, 'status': 'available'}, {'row': 'G', 'number': 14, 'status': 'available'}, {'row': 'G', 'number': 15, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}, {'row': 'H', 'number': 5, 'status': 'available'}, {'row': 'H', 'number': 6, 'status': 'available'}, {'row': 'H', 'number': 7, 'status': 'available'}, {'row': 'H', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 9, 'status': 'available'}, {'row': 'H', 'number': 10, 'status': 'available'}, {'row': 'H', 'number': 11, 'status': 'available'}, {'row': 'H', 'number': 12, 'status': 'available'}, {'row': 'H', 'number': 13, 'status': 'available'}, {'row': 'H', 'number': 14, 'status': 'available'}, {'row': 'H', 'number': 15, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.108Z', '__v': 0, 'updatedAt': '2025-10-24T19:03:24.855Z', 'id': '68fbb6b7db724fb5eded0eec'}}</msg>
+<arg>${session_detail}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.610028" elapsed="0.000330"/>
+</kw>
+<doc>Testa se a API retorna detalhes corretos de uma sessão específica</doc>
+<status status="PASS" start="2025-10-24T16:07:52.222349" elapsed="0.388167"/>
+</test>
+<test id="s1-s5-t3" name="Listar Sessões de um Filme Específico" line="44">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:52.611572" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-10-24T16:07:52.611448" elapsed="0.000255"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:52.862615" level="INFO">GET Request : url=http://localhost:3000/api/v1/sessions 
+ path_url=/api/v1/sessions 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-10-24T16:07:52.862732" level="INFO">GET Response : url=http://localhost:3000/api/v1/sessions 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '42918', 'ETag': 'W/"a7a6-yzeFHGETJVb4zL93hOYZ1ZUeQTQ"', 'Date': 'Fri, 24 Oct 2025 19:07:52 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":true,"count":10,"pagination":{"next":{"page":2,"limit":10}},"data":[{"_id":"68fbb6b7db724fb5eded0eec","movie":{"_id":"68fbb6b6db724fb5eded0edc","title":"The Avengers","duration":143,"poster":"avengers.jpg","id":"68fbb6b6db724fb5eded0edc"},"theater":{"_id":"68fbb6b7db724fb5eded0edf","name":"Theater 1","type":"standard","id":"68fbb6b7db724fb5eded0edf"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"occupied"},{"row":"A","number":2,"status":"occupied"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"A","number":9,"status":"available"},{"row":"A","number":10,"status":"available"},{"row":"A","number":11,"status":"available"},{"row":"A","number":12,"status":"available"},{"row":"A","number":13,"status":"available"},{"row":"A","number":14,"status":"available"},{"row":"A","number":15,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":"B","number":5,"status":"available"},{"row":"B","number":6,"status":"available"},{"row":"B","number":7,"status":"available"},{"row":"B","number":8,"status":"available"},{"row":"B","number":9,"status":"available"},{"row":"B","number":10,"status":"available"},{"row":"B","number":11,"status":"available"},{"row":"B","number":12,"status":"available"},{"row":"B","number":13,"status":"available"},{"row":"B","number":14,"status":"available"},{"row":"B","number":15,"status":"available"},{"row":"C","number":1,"status":"available"},{"row":"C","number":2,"status":"available"},{"row":"C","number":3,"status":"available"},{"row":"C","number":4,"status":"available"},{"row":"C","number":5,"status":"available"},{"row":"C","number":6,"status":"available"},{"row":"C","number":7,"status":"available"},{"row":"C","number":8,"status":"available"},{"row":"C","number":9,"status":"available"},{"row":"C","number":10,"status":"available"},{"row":"C","number":11,"status":"available"},{"row":"C","number":12,"status":"available"},{"row":"C","number":13,"status":"available"},{"row":"C","number":14,"status":"available"},{"row":"C","number":15,"status":"available"},{"row":"D","number":1,"status":"available"},{"row":"D","number":2,"status":"available"},{"row":"D","number":3,"status":"available"},{"row":"D","number":4,"status":"available"},{"row":"D","number":5,"status":"available"},{"row":"D","number":6,"status":"available"},{"row":"D","number":7,"status":"available"},{"row":"D","number":8,"status":"available"},{"row":"D","number":9,"status":"available"},{"row":"D","number":10,"status":"available"},{"row":"D","number":11,"status":"available"},{"row":"D","number":12,"status":"available"},{"row":"D","number":13,"status":"available"},{"row":"D","number":14,"status":"available"},{"row":"D","number":15,"status":"available"},{"row":"E","number":1,"status":"available"},{"row":"E","number":2,"status":"available"},{"row":"E","number":3,"status":"available"},{"row":"E","number":4,"status":"available"},{"row":"E","number":5,"status":"available"},{"row":"E","number":6,"status":"available"},{"row":"E","number":7,"status":"available"},{"row":"E","number":8,"status":"available"},{"row":"E","number":9,"status":"available"},{"row":"E","number":10,"status":"available"},{"row":"E","number":11,"status":"available"},{"row":"E","number":12,"status":"available"},{"row":"E","number":13,"status":"available"},{"row":"E","number":14,"status":"available"},{"row":"E","number":15,"status":"available"},{"row":"F","number":1,"status":"available"},{"row":"F","number":2,"status":"available"},{"row":"F","number":3,"status":"available"},{"row":"F","number":4,"status":"available"},{"row":"F","number":5,"status":"available"},{"row":"F","number":6,"status":"available"},{"row":"F","number":7,"status":"available"},{"row":"F","number":8,"status":"available"},{"row":"F","number":9,"status":"available"},{"row":"F","number":10,"status":"available"},{"row":"F","number":11,"status":"available"},{"row":"F","number":12,"status":"available"},{"row":"F","number":13,"status":"available"},{"row":"F","number":14,"status":"available"},{"row":"F","number":15,"status":"available"},{"row":"G","number":1,"status":"available"},{"row":"G","number":2,"status":"available"},{"row":"G","number":3,"status":"available"},{"row":"G","number":4,"status":"available"},{"row":"G","number":5,"status":"available"},{"row":"G","number":6,"status":"available"},{"row":"G","number":7,"status":"available"},{"row":"G","number":8,"status":"available"},{"row":"G","number":9,"status":"available"},{"row":"G","number":10,"status":"available"},{"row":"G","number":11,"status":"available"},{"row":"G","number":12,"status":"available"},{"row":"G","number":13,"status":"available"},{"row":"G","number":14,"status":"available"},{"row":"G","number":15,"status":"available"},{"row":"H","number":1,"status":"available"},{"row":"H","number":2,"status":"available"},{"row":"H","number":3,"status":"available"},{"row":"H","number":4,"status":"available"},{"row":"H","number":5,"status":"available"},{"row":"H","number":6,"status":"available"},{"row":"H","number":7,"status":"available"},{"row":"H","number":8,"status":"available"},{"row":"H","number":9,"status":"available"},{"row":"H","number":10,"status":"available"},{"row":"H","number":11,"status":"available"},{"row":"H","number":12,"status":"available"},{"row":"H","number":13,"status":"available"},{"row":"H","number":14,"status":"available"},{"row":"H","number":15,"status":"available"}],"createdAt":"2025-10-24T17:26:15.108Z","__v":0,"updatedAt":"2025-10-24T19:03:24.855Z","id":"68fbb6b7db724fb5eded0eec"},{"_id":"68fbb6b7db724fb5eded0ef0","movie":{"_id":"68fbb6b6db724fb5eded0edc","title":"The Avengers","duration":143,"poster":"avengers.jpg","id":"68fbb6b6db724fb5eded0edc"},"theater":{"_id":"68fbb6b7db724fb5eded0ee1","name":"Theater 3","type":"IMAX","id":"68fbb6b7db724fb5eded0ee1"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"occupied"},{"row":"A","number":2,"status":"available"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":"B","number":5,"status":"available"},{"row":"B","number":6,"status":"available"},{"row":"B","number":7,"status":"available"},{"row":"B","number":8,"status":"available"},{"row":"C","number":1,"status":"available"},{"row":"C","number":2,"status":"available"},{"row":"C","number":3,"status":"available"},{"row":"C","number":4,"status":"available"},{"row":"C","number":5,"status":"available"},{"row":"C","number":6,"status":"available"},{"row":"C","number":7,"status":"available"},{"row":"C","number":8,"status":"available"},{"row":"D","number":1,"status":"available"},{"row":"D","number":2,"status":"available"},{"row":"D","number":3,"status":"available"},{"row":"D","number":4,"status":"available"},{"row":"D","number":5,"status":"available"},{"row":"D","number":6,"status":"available"},{"row":"D","number":7,"status":"available"},{"row":"D","number":8,"status":"available"},{"row":"E","number":1,"status":"available"},{"row":"E","number":2,"status":"available"},{"row":"E","number":3,"status":"available"},{"row":"E","number":4,"status":"available"},{"row":"E","number":5,"status":"available"},{"row":"E","number":6,"status":"available"},{"row":"E","number":7,"status":"available"},{"row":"E","number":8,"status":"available"},{"row":"F","number":1,"status":"available"},{"row":"F","number":2,"status":"available"},{"row":"F","number":3,"status":"available"},{"row":"F","number":4,"status":"available"},{"row":"F","number":5,"status":"available"},{"row":"F","number":6,"status":"available"},{"row":"F","number":7,"status":"available"},{"row":"F","number":8,"status":"available"},{"row":"G","number":1,"status":"available"},{"row":"G","number":2,"status":"available"},{"row":"G","number":3,"status":"available"},{"row":"G","number":4,"status":"available"},{"row":"G","number":5,"status":"available"},{"row":"G","number":6,"status":"available"},{"row":"G","number":7,"status":"available"},{"row":"G","number":8,"status":"available"},{"row":"H","number":1,"status":"available"},{"row":"H","number":2,"status":"available"},{"row":"H","number":3,"status":"available"},{"row":"H","number":4,"status":"available"}],"createdAt":"2025-10-24T17:26:15.120Z","__v":0,"updatedAt":"2025-10-24T19:07:50.657Z","id":"68fbb6b7db724fb5eded0ef0"},{"_id":"68fbb6b7db724fb5eded0ef4","movie":{"_id":"68fbb6b6db724fb5eded0edd","title":"The Shawshank Redemption","duration":142,"poster":"shawshank.jpg","id":"68fbb6b6db724fb5eded0edd"},"theater":{"_id":"68fbb6b7db724fb5eded0ee0","name":"Theater 2","type":"3D","id":"68fbb6b7db724fb5eded0ee0"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"available"},{"row":"A","number":2,"status":"available"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"A","number":9,"status":"available"},{"row":"A","number":10,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-10-24T16:07:52.862952" level="INFO">${sessions_response} = &lt;Response [200]&gt;</msg>
+<var>${sessions_response}</var>
+<arg>api</arg>
+<arg>/sessions</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.611889" elapsed="0.251085"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.865467" level="INFO">${response_json} = {'success': True, 'count': 10, 'pagination': {'next': {'page': 2, 'limit': 10}}, 'data': [{'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'dur...</msg>
+<var>${response_json}</var>
+<arg>${sessions_response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.863509" elapsed="0.001990"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.866658" level="INFO">${sessions} = [{'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_i...</msg>
+<var>${sessions}</var>
+<arg>${response_json['data']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.865743" elapsed="0.000939"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.867043" level="INFO">Length is 10.</msg>
+<msg time="2025-10-24T16:07:52.867101" level="INFO">${count} = 10</msg>
+<var>${count}</var>
+<arg>${sessions}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.866936" elapsed="0.000184"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Não há sessões cadastradas para buscar por filme</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.867364" elapsed="0.000204"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.868041" level="INFO">${first_session} = {'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_id...</msg>
+<var>${first_session}</var>
+<arg>${sessions}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.867814" elapsed="0.000251"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.868695" level="INFO">${movie_obj} = {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}</msg>
+<var>${movie_obj}</var>
+<arg>${first_session['movie']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.868303" elapsed="0.000416"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.869293" level="INFO">${movie_id} = 68fbb6b6db724fb5eded0edc</msg>
+<var>${movie_id}</var>
+<arg>${movie_obj['_id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.868913" elapsed="0.000401"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-24T16:07:52.869929" level="INFO">&amp;{params} = { movieId=68fbb6b6db724fb5eded0edc }</msg>
+<var>&amp;{params}</var>
+<arg>movieId=${movie_id}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.869722" elapsed="0.000230"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-10-24T16:07:53.121216" level="INFO">GET Request : url=http://localhost:3000/api/v1/sessions?movieId=68fbb6b6db724fb5eded0edc 
+ path_url=/api/v1/sessions?movieId=68fbb6b6db724fb5eded0edc 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-10-24T16:07:53.121297" level="INFO">GET Response : url=http://localhost:3000/api/v1/sessions?movieId=68fbb6b6db724fb5eded0edc 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '42918', 'ETag': 'W/"a7a6-yzeFHGETJVb4zL93hOYZ1ZUeQTQ"', 'Date': 'Fri, 24 Oct 2025 19:07:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"success":true,"count":10,"pagination":{"next":{"page":2,"limit":10}},"data":[{"_id":"68fbb6b7db724fb5eded0eec","movie":{"_id":"68fbb6b6db724fb5eded0edc","title":"The Avengers","duration":143,"poster":"avengers.jpg","id":"68fbb6b6db724fb5eded0edc"},"theater":{"_id":"68fbb6b7db724fb5eded0edf","name":"Theater 1","type":"standard","id":"68fbb6b7db724fb5eded0edf"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"occupied"},{"row":"A","number":2,"status":"occupied"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"A","number":9,"status":"available"},{"row":"A","number":10,"status":"available"},{"row":"A","number":11,"status":"available"},{"row":"A","number":12,"status":"available"},{"row":"A","number":13,"status":"available"},{"row":"A","number":14,"status":"available"},{"row":"A","number":15,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":"B","number":5,"status":"available"},{"row":"B","number":6,"status":"available"},{"row":"B","number":7,"status":"available"},{"row":"B","number":8,"status":"available"},{"row":"B","number":9,"status":"available"},{"row":"B","number":10,"status":"available"},{"row":"B","number":11,"status":"available"},{"row":"B","number":12,"status":"available"},{"row":"B","number":13,"status":"available"},{"row":"B","number":14,"status":"available"},{"row":"B","number":15,"status":"available"},{"row":"C","number":1,"status":"available"},{"row":"C","number":2,"status":"available"},{"row":"C","number":3,"status":"available"},{"row":"C","number":4,"status":"available"},{"row":"C","number":5,"status":"available"},{"row":"C","number":6,"status":"available"},{"row":"C","number":7,"status":"available"},{"row":"C","number":8,"status":"available"},{"row":"C","number":9,"status":"available"},{"row":"C","number":10,"status":"available"},{"row":"C","number":11,"status":"available"},{"row":"C","number":12,"status":"available"},{"row":"C","number":13,"status":"available"},{"row":"C","number":14,"status":"available"},{"row":"C","number":15,"status":"available"},{"row":"D","number":1,"status":"available"},{"row":"D","number":2,"status":"available"},{"row":"D","number":3,"status":"available"},{"row":"D","number":4,"status":"available"},{"row":"D","number":5,"status":"available"},{"row":"D","number":6,"status":"available"},{"row":"D","number":7,"status":"available"},{"row":"D","number":8,"status":"available"},{"row":"D","number":9,"status":"available"},{"row":"D","number":10,"status":"available"},{"row":"D","number":11,"status":"available"},{"row":"D","number":12,"status":"available"},{"row":"D","number":13,"status":"available"},{"row":"D","number":14,"status":"available"},{"row":"D","number":15,"status":"available"},{"row":"E","number":1,"status":"available"},{"row":"E","number":2,"status":"available"},{"row":"E","number":3,"status":"available"},{"row":"E","number":4,"status":"available"},{"row":"E","number":5,"status":"available"},{"row":"E","number":6,"status":"available"},{"row":"E","number":7,"status":"available"},{"row":"E","number":8,"status":"available"},{"row":"E","number":9,"status":"available"},{"row":"E","number":10,"status":"available"},{"row":"E","number":11,"status":"available"},{"row":"E","number":12,"status":"available"},{"row":"E","number":13,"status":"available"},{"row":"E","number":14,"status":"available"},{"row":"E","number":15,"status":"available"},{"row":"F","number":1,"status":"available"},{"row":"F","number":2,"status":"available"},{"row":"F","number":3,"status":"available"},{"row":"F","number":4,"status":"available"},{"row":"F","number":5,"status":"available"},{"row":"F","number":6,"status":"available"},{"row":"F","number":7,"status":"available"},{"row":"F","number":8,"status":"available"},{"row":"F","number":9,"status":"available"},{"row":"F","number":10,"status":"available"},{"row":"F","number":11,"status":"available"},{"row":"F","number":12,"status":"available"},{"row":"F","number":13,"status":"available"},{"row":"F","number":14,"status":"available"},{"row":"F","number":15,"status":"available"},{"row":"G","number":1,"status":"available"},{"row":"G","number":2,"status":"available"},{"row":"G","number":3,"status":"available"},{"row":"G","number":4,"status":"available"},{"row":"G","number":5,"status":"available"},{"row":"G","number":6,"status":"available"},{"row":"G","number":7,"status":"available"},{"row":"G","number":8,"status":"available"},{"row":"G","number":9,"status":"available"},{"row":"G","number":10,"status":"available"},{"row":"G","number":11,"status":"available"},{"row":"G","number":12,"status":"available"},{"row":"G","number":13,"status":"available"},{"row":"G","number":14,"status":"available"},{"row":"G","number":15,"status":"available"},{"row":"H","number":1,"status":"available"},{"row":"H","number":2,"status":"available"},{"row":"H","number":3,"status":"available"},{"row":"H","number":4,"status":"available"},{"row":"H","number":5,"status":"available"},{"row":"H","number":6,"status":"available"},{"row":"H","number":7,"status":"available"},{"row":"H","number":8,"status":"available"},{"row":"H","number":9,"status":"available"},{"row":"H","number":10,"status":"available"},{"row":"H","number":11,"status":"available"},{"row":"H","number":12,"status":"available"},{"row":"H","number":13,"status":"available"},{"row":"H","number":14,"status":"available"},{"row":"H","number":15,"status":"available"}],"createdAt":"2025-10-24T17:26:15.108Z","__v":0,"updatedAt":"2025-10-24T19:03:24.855Z","id":"68fbb6b7db724fb5eded0eec"},{"_id":"68fbb6b7db724fb5eded0ef0","movie":{"_id":"68fbb6b6db724fb5eded0edc","title":"The Avengers","duration":143,"poster":"avengers.jpg","id":"68fbb6b6db724fb5eded0edc"},"theater":{"_id":"68fbb6b7db724fb5eded0ee1","name":"Theater 3","type":"IMAX","id":"68fbb6b7db724fb5eded0ee1"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"occupied"},{"row":"A","number":2,"status":"available"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":"B","number":5,"status":"available"},{"row":"B","number":6,"status":"available"},{"row":"B","number":7,"status":"available"},{"row":"B","number":8,"status":"available"},{"row":"C","number":1,"status":"available"},{"row":"C","number":2,"status":"available"},{"row":"C","number":3,"status":"available"},{"row":"C","number":4,"status":"available"},{"row":"C","number":5,"status":"available"},{"row":"C","number":6,"status":"available"},{"row":"C","number":7,"status":"available"},{"row":"C","number":8,"status":"available"},{"row":"D","number":1,"status":"available"},{"row":"D","number":2,"status":"available"},{"row":"D","number":3,"status":"available"},{"row":"D","number":4,"status":"available"},{"row":"D","number":5,"status":"available"},{"row":"D","number":6,"status":"available"},{"row":"D","number":7,"status":"available"},{"row":"D","number":8,"status":"available"},{"row":"E","number":1,"status":"available"},{"row":"E","number":2,"status":"available"},{"row":"E","number":3,"status":"available"},{"row":"E","number":4,"status":"available"},{"row":"E","number":5,"status":"available"},{"row":"E","number":6,"status":"available"},{"row":"E","number":7,"status":"available"},{"row":"E","number":8,"status":"available"},{"row":"F","number":1,"status":"available"},{"row":"F","number":2,"status":"available"},{"row":"F","number":3,"status":"available"},{"row":"F","number":4,"status":"available"},{"row":"F","number":5,"status":"available"},{"row":"F","number":6,"status":"available"},{"row":"F","number":7,"status":"available"},{"row":"F","number":8,"status":"available"},{"row":"G","number":1,"status":"available"},{"row":"G","number":2,"status":"available"},{"row":"G","number":3,"status":"available"},{"row":"G","number":4,"status":"available"},{"row":"G","number":5,"status":"available"},{"row":"G","number":6,"status":"available"},{"row":"G","number":7,"status":"available"},{"row":"G","number":8,"status":"available"},{"row":"H","number":1,"status":"available"},{"row":"H","number":2,"status":"available"},{"row":"H","number":3,"status":"available"},{"row":"H","number":4,"status":"available"}],"createdAt":"2025-10-24T17:26:15.120Z","__v":0,"updatedAt":"2025-10-24T19:07:50.657Z","id":"68fbb6b7db724fb5eded0ef0"},{"_id":"68fbb6b7db724fb5eded0ef4","movie":{"_id":"68fbb6b6db724fb5eded0edd","title":"The Shawshank Redemption","duration":142,"poster":"shawshank.jpg","id":"68fbb6b6db724fb5eded0edd"},"theater":{"_id":"68fbb6b7db724fb5eded0ee0","name":"Theater 2","type":"3D","id":"68fbb6b7db724fb5eded0ee0"},"datetime":"2025-10-24T15:00:00.000Z","fullPrice":15,"halfPrice":7.5,"seats":[{"row":"A","number":1,"status":"available"},{"row":"A","number":2,"status":"available"},{"row":"A","number":3,"status":"available"},{"row":"A","number":4,"status":"available"},{"row":"A","number":5,"status":"available"},{"row":"A","number":6,"status":"available"},{"row":"A","number":7,"status":"available"},{"row":"A","number":8,"status":"available"},{"row":"A","number":9,"status":"available"},{"row":"A","number":10,"status":"available"},{"row":"B","number":1,"status":"available"},{"row":"B","number":2,"status":"available"},{"row":"B","number":3,"status":"available"},{"row":"B","number":4,"status":"available"},{"row":... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-10-24T16:07:53.121519" level="INFO">${movie_sessions_response} = &lt;Response [200]&gt;</msg>
+<var>${movie_sessions_response}</var>
+<arg>api</arg>
+<arg>/sessions</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-10-24T16:07:52.870094" elapsed="0.251448"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-10-24T16:07:53.122259" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${movie_sessions_response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-10-24T16:07:53.121847" elapsed="0.000464"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:53.124199" level="INFO">${movie_sessions_json} = {'success': True, 'count': 10, 'pagination': {'next': {'page': 2, 'limit': 10}}, 'data': [{'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'dur...</msg>
+<var>${movie_sessions_json}</var>
+<arg>${movie_sessions_response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:53.122525" elapsed="0.001709"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-24T16:07:53.125484" level="INFO">${movie_sessions} = [{'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_i...</msg>
+<var>${movie_sessions}</var>
+<arg>${movie_sessions_json['data']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-24T16:07:53.124474" elapsed="0.001037"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-10-24T16:07:53.125872" level="INFO">Length is 10.</msg>
+<arg>${movie_sessions}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-10-24T16:07:53.125757" elapsed="0.000151"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-24T16:07:53.126780" level="INFO">[{'_id': '68fbb6b7db724fb5eded0eec', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_id': '68fbb6b7db724fb5eded0edf', 'name': 'Theater 1', 'type': 'standard', 'id': '68fbb6b7db724fb5eded0edf'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'occupied'}, {'row': 'A', 'number': 2, 'status': 'occupied'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'A', 'number': 9, 'status': 'available'}, {'row': 'A', 'number': 10, 'status': 'available'}, {'row': 'A', 'number': 11, 'status': 'available'}, {'row': 'A', 'number': 12, 'status': 'available'}, {'row': 'A', 'number': 13, 'status': 'available'}, {'row': 'A', 'number': 14, 'status': 'available'}, {'row': 'A', 'number': 15, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 9, 'status': 'available'}, {'row': 'B', 'number': 10, 'status': 'available'}, {'row': 'B', 'number': 11, 'status': 'available'}, {'row': 'B', 'number': 12, 'status': 'available'}, {'row': 'B', 'number': 13, 'status': 'available'}, {'row': 'B', 'number': 14, 'status': 'available'}, {'row': 'B', 'number': 15, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 9, 'status': 'available'}, {'row': 'C', 'number': 10, 'status': 'available'}, {'row': 'C', 'number': 11, 'status': 'available'}, {'row': 'C', 'number': 12, 'status': 'available'}, {'row': 'C', 'number': 13, 'status': 'available'}, {'row': 'C', 'number': 14, 'status': 'available'}, {'row': 'C', 'number': 15, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 9, 'status': 'available'}, {'row': 'D', 'number': 10, 'status': 'available'}, {'row': 'D', 'number': 11, 'status': 'available'}, {'row': 'D', 'number': 12, 'status': 'available'}, {'row': 'D', 'number': 13, 'status': 'available'}, {'row': 'D', 'number': 14, 'status': 'available'}, {'row': 'D', 'number': 15, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 9, 'status': 'available'}, {'row': 'E', 'number': 10, 'status': 'available'}, {'row': 'E', 'number': 11, 'status': 'available'}, {'row': 'E', 'number': 12, 'status': 'available'}, {'row': 'E', 'number': 13, 'status': 'available'}, {'row': 'E', 'number': 14, 'status': 'available'}, {'row': 'E', 'number': 15, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 9, 'status': 'available'}, {'row': 'F', 'number': 10, 'status': 'available'}, {'row': 'F', 'number': 11, 'status': 'available'}, {'row': 'F', 'number': 12, 'status': 'available'}, {'row': 'F', 'number': 13, 'status': 'available'}, {'row': 'F', 'number': 14, 'status': 'available'}, {'row': 'F', 'number': 15, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 9, 'status': 'available'}, {'row': 'G', 'number': 10, 'status': 'available'}, {'row': 'G', 'number': 11, 'status': 'available'}, {'row': 'G', 'number': 12, 'status': 'available'}, {'row': 'G', 'number': 13, 'status': 'available'}, {'row': 'G', 'number': 14, 'status': 'available'}, {'row': 'G', 'number': 15, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}, {'row': 'H', 'number': 5, 'status': 'available'}, {'row': 'H', 'number': 6, 'status': 'available'}, {'row': 'H', 'number': 7, 'status': 'available'}, {'row': 'H', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 9, 'status': 'available'}, {'row': 'H', 'number': 10, 'status': 'available'}, {'row': 'H', 'number': 11, 'status': 'available'}, {'row': 'H', 'number': 12, 'status': 'available'}, {'row': 'H', 'number': 13, 'status': 'available'}, {'row': 'H', 'number': 14, 'status': 'available'}, {'row': 'H', 'number': 15, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.108Z', '__v': 0, 'updatedAt': '2025-10-24T19:03:24.855Z', 'id': '68fbb6b7db724fb5eded0eec'}, {'_id': '68fbb6b7db724fb5eded0ef0', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_id': '68fbb6b7db724fb5eded0ee1', 'name': 'Theater 3', 'type': 'IMAX', 'id': '68fbb6b7db724fb5eded0ee1'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'occupied'}, {'row': 'A', 'number': 2, 'status': 'available'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.120Z', '__v': 0, 'updatedAt': '2025-10-24T19:07:50.657Z', 'id': '68fbb6b7db724fb5eded0ef0'}, {'_id': '68fbb6b7db724fb5eded0ef4', 'movie': {'_id': '68fbb6b6db724fb5eded0edd', 'title': 'The Shawshank Redemption', 'duration': 142, 'poster': 'shawshank.jpg', 'id': '68fbb6b6db724fb5eded0edd'}, 'theater': {'_id': '68fbb6b7db724fb5eded0ee0', 'name': 'Theater 2', 'type': '3D', 'id': '68fbb6b7db724fb5eded0ee0'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'available'}, {'row': 'A', 'number': 2, 'status': 'available'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'A', 'number': 9, 'status': 'available'}, {'row': 'A', 'number': 10, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 9, 'status': 'available'}, {'row': 'B', 'number': 10, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 9, 'status': 'available'}, {'row': 'C', 'number': 10, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 9, 'status': 'available'}, {'row': 'D', 'number': 10, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 9, 'status': 'available'}, {'row': 'E', 'number': 10, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 9, 'status': 'available'}, {'row': 'F', 'number': 10, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 9, 'status': 'available'}, {'row': 'G', 'number': 10, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}, {'row': 'H', 'number': 5, 'status': 'available'}, {'row': 'H', 'number': 6, 'status': 'available'}, {'row': 'H', 'number': 7, 'status': 'available'}, {'row': 'H', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 9, 'status': 'available'}, {'row': 'H', 'number': 10, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.133Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:15.646Z', 'id': '68fbb6b7db724fb5eded0ef4'}, {'_id': '68fbb6b7db724fb5eded0ee4', 'movie': {'_id': '68fbb6b6db724fb5eded0edb', 'title': 'Inception', 'duration': 148, 'poster': 'inception.jpg', 'id': '68fbb6b6db724fb5eded0edb'}, 'theater': {'_id': '68fbb6b7db724fb5eded0edf', 'name': 'Theater 1', 'type': 'standard', 'id': '68fbb6b7db724fb5eded0edf'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'available'}, {'row': 'A', 'number': 2, 'status': 'available'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'A', 'number': 9, 'status': 'available'}, {'row': 'A', 'number': 10, 'status': 'available'}, {'row': 'A', 'number': 11, 'status': 'available'}, {'row': 'A', 'number': 12, 'status': 'available'}, {'row': 'A', 'number': 13, 'status': 'available'}, {'row': 'A', 'number': 14, 'status': 'available'}, {'row': 'A', 'number': 15, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 9, 'status': 'available'}, {'row': 'B', 'number': 10, 'status': 'available'}, {'row': 'B', 'number': 11, 'status': 'available'}, {'row': 'B', 'number': 12, 'status': 'available'}, {'row': 'B', 'number': 13, 'status': 'available'}, {'row': 'B', 'number': 14, 'status': 'available'}, {'row': 'B', 'number': 15, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 9, 'status': 'available'}, {'row': 'C', 'number': 10, 'status': 'available'}, {'row': 'C', 'number': 11, 'status': 'available'}, {'row': 'C', 'number': 12, 'status': 'available'}, {'row': 'C', 'number': 13, 'status': 'available'}, {'row': 'C', 'number': 14, 'status': 'available'}, {'row': 'C', 'number': 15, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 9, 'status': 'available'}, {'row': 'D', 'number': 10, 'status': 'available'}, {'row': 'D', 'number': 11, 'status': 'available'}, {'row': 'D', 'number': 12, 'status': 'available'}, {'row': 'D', 'number': 13, 'status': 'available'}, {'row': 'D', 'number': 14, 'status': 'available'}, {'row': 'D', 'number': 15, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 9, 'status': 'available'}, {'row': 'E', 'number': 10, 'status': 'available'}, {'row': 'E', 'number': 11, 'status': 'available'}, {'row': 'E', 'number': 12, 'status': 'available'}, {'row': 'E', 'number': 13, 'status': 'available'}, {'row': 'E', 'number': 14, 'status': 'available'}, {'row': 'E', 'number': 15, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 9, 'status': 'available'}, {'row': 'F', 'number': 10, 'status': 'available'}, {'row': 'F', 'number': 11, 'status': 'available'}, {'row': 'F', 'number': 12, 'status': 'available'}, {'row': 'F', 'number': 13, 'status': 'available'}, {'row': 'F', 'number': 14, 'status': 'available'}, {'row': 'F', 'number': 15, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 9, 'status': 'available'}, {'row': 'G', 'number': 10, 'status': 'available'}, {'row': 'G', 'number': 11, 'status': 'available'}, {'row': 'G', 'number': 12, 'status': 'available'}, {'row': 'G', 'number': 13, 'status': 'available'}, {'row': 'G', 'number': 14, 'status': 'available'}, {'row': 'G', 'number': 15, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}, {'row': 'H', 'number': 5, 'status': 'available'}, {'row': 'H', 'number': 6, 'status': 'available'}, {'row': 'H', 'number': 7, 'status': 'available'}, {'row': 'H', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 9, 'status': 'available'}, {'row': 'H', 'number': 10, 'status': 'available'}, {'row': 'H', 'number': 11, 'status': 'available'}, {'row': 'H', 'number': 12, 'status': 'available'}, {'row': 'H', 'number': 13, 'status': 'available'}, {'row': 'H', 'number': 14, 'status': 'available'}, {'row': 'H', 'number': 15, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.080Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:15.640Z', 'id': '68fbb6b7db724fb5eded0ee4'}, {'_id': '68fbb6b7db724fb5eded0ee9', 'movie': {'_id': '68fbb6b6db724fb5eded0edb', 'title': 'Inception', 'duration': 148, 'poster': 'inception.jpg', 'id': '68fbb6b6db724fb5eded0edb'}, 'theater': {'_id': '68fbb6b7db724fb5eded0ee1', 'name': 'Theater 3', 'type': 'IMAX', 'id': '68fbb6b7db724fb5eded0ee1'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'available'}, {'row': 'A', 'number': 2, 'status': 'available'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.099Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:15.643Z', 'id': '68fbb6b7db724fb5eded0ee9'}, {'_id': '68fbb6b7db724fb5eded0ef2', 'movie': {'_id': '68fbb6b6db724fb5eded0edd', 'title': 'The Shawshank Redemption', 'duration': 142, 'poster': 'shawshank.jpg', 'id': '68fbb6b6db724fb5eded0edd'}, 'theater': {'_id': '68fbb6b7db724fb5eded0edf', 'name': 'Theater 1', 'type': 'standard', 'id': '68fbb6b7db724fb5eded0edf'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'available'}, {'row': 'A', 'number': 2, 'status': 'available'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'A', 'number': 9, 'status': 'available'}, {'row': 'A', 'number': 10, 'status': 'available'}, {'row': 'A', 'number': 11, 'status': 'available'}, {'row': 'A', 'number': 12, 'status': 'available'}, {'row': 'A', 'number': 13, 'status': 'available'}, {'row': 'A', 'number': 14, 'status': 'available'}, {'row': 'A', 'number': 15, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 9, 'status': 'available'}, {'row': 'B', 'number': 10, 'status': 'available'}, {'row': 'B', 'number': 11, 'status': 'available'}, {'row': 'B', 'number': 12, 'status': 'available'}, {'row': 'B', 'number': 13, 'status': 'available'}, {'row': 'B', 'number': 14, 'status': 'available'}, {'row': 'B', 'number': 15, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 9, 'status': 'available'}, {'row': 'C', 'number': 10, 'status': 'available'}, {'row': 'C', 'number': 11, 'status': 'available'}, {'row': 'C', 'number': 12, 'status': 'available'}, {'row': 'C', 'number': 13, 'status': 'available'}, {'row': 'C', 'number': 14, 'status': 'available'}, {'row': 'C', 'number': 15, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 9, 'status': 'available'}, {'row': 'D', 'number': 10, 'status': 'available'}, {'row': 'D', 'number': 11, 'status': 'available'}, {'row': 'D', 'number': 12, 'status': 'available'}, {'row': 'D', 'number': 13, 'status': 'available'}, {'row': 'D', 'number': 14, 'status': 'available'}, {'row': 'D', 'number': 15, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 9, 'status': 'available'}, {'row': 'E', 'number': 10, 'status': 'available'}, {'row': 'E', 'number': 11, 'status': 'available'}, {'row': 'E', 'number': 12, 'status': 'available'}, {'row': 'E', 'number': 13, 'status': 'available'}, {'row': 'E', 'number': 14, 'status': 'available'}, {'row': 'E', 'number': 15, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 9, 'status': 'available'}, {'row': 'F', 'number': 10, 'status': 'available'}, {'row': 'F', 'number': 11, 'status': 'available'}, {'row': 'F', 'number': 12, 'status': 'available'}, {'row': 'F', 'number': 13, 'status': 'available'}, {'row': 'F', 'number': 14, 'status': 'available'}, {'row': 'F', 'number': 15, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 9, 'status': 'available'}, {'row': 'G', 'number': 10, 'status': 'available'}, {'row': 'G', 'number': 11, 'status': 'available'}, {'row': 'G', 'number': 12, 'status': 'available'}, {'row': 'G', 'number': 13, 'status': 'available'}, {'row': 'G', 'number': 14, 'status': 'available'}, {'row': 'G', 'number': 15, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}, {'row': 'H', 'number': 5, 'status': 'available'}, {'row': 'H', 'number': 6, 'status': 'available'}, {'row': 'H', 'number': 7, 'status': 'available'}, {'row': 'H', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 9, 'status': 'available'}, {'row': 'H', 'number': 10, 'status': 'available'}, {'row': 'H', 'number': 11, 'status': 'available'}, {'row': 'H', 'number': 12, 'status': 'available'}, {'row': 'H', 'number': 13, 'status': 'available'}, {'row': 'H', 'number': 14, 'status': 'available'}, {'row': 'H', 'number': 15, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.128Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:15.645Z', 'id': '68fbb6b7db724fb5eded0ef2'}, {'_id': '68fbb6b7db724fb5eded0ef7', 'movie': {'_id': '68fbb6b6db724fb5eded0edd', 'title': 'The Shawshank Redemption', 'duration': 142, 'poster': 'shawshank.jpg', 'id': '68fbb6b6db724fb5eded0edd'}, 'theater': {'_id': '68fbb6b7db724fb5eded0ee1', 'name': 'Theater 3', 'type': 'IMAX', 'id': '68fbb6b7db724fb5eded0ee1'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'available'}, {'row': 'A', 'number': 2, 'status': 'available'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.138Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:15.647Z', 'id': '68fbb6b7db724fb5eded0ef7'}, {'_id': '68fbb6b7db724fb5eded0eee', 'movie': {'_id': '68fbb6b6db724fb5eded0edc', 'title': 'The Avengers', 'duration': 143, 'poster': 'avengers.jpg', 'id': '68fbb6b6db724fb5eded0edc'}, 'theater': {'_id': '68fbb6b7db724fb5eded0ee0', 'name': 'Theater 2', 'type': '3D', 'id': '68fbb6b7db724fb5eded0ee0'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'available'}, {'row': 'A', 'number': 2, 'status': 'available'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'A', 'number': 9, 'status': 'available'}, {'row': 'A', 'number': 10, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 9, 'status': 'available'}, {'row': 'B', 'number': 10, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 9, 'status': 'available'}, {'row': 'C', 'number': 10, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 9, 'status': 'available'}, {'row': 'D', 'number': 10, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 9, 'status': 'available'}, {'row': 'E', 'number': 10, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 9, 'status': 'available'}, {'row': 'F', 'number': 10, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 9, 'status': 'available'}, {'row': 'G', 'number': 10, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}, {'row': 'H', 'number': 5, 'status': 'available'}, {'row': 'H', 'number': 6, 'status': 'available'}, {'row': 'H', 'number': 7, 'status': 'available'}, {'row': 'H', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 9, 'status': 'available'}, {'row': 'H', 'number': 10, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.114Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:15.644Z', 'id': '68fbb6b7db724fb5eded0eee'}, {'_id': '68fbb6b7db724fb5eded0ee6', 'movie': {'_id': '68fbb6b6db724fb5eded0edb', 'title': 'Inception', 'duration': 148, 'poster': 'inception.jpg', 'id': '68fbb6b6db724fb5eded0edb'}, 'theater': {'_id': '68fbb6b7db724fb5eded0ee0', 'name': 'Theater 2', 'type': '3D', 'id': '68fbb6b7db724fb5eded0ee0'}, 'datetime': '2025-10-24T15:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'available'}, {'row': 'A', 'number': 2, 'status': 'available'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'A', 'number': 9, 'status': 'available'}, {'row': 'A', 'number': 10, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 9, 'status': 'available'}, {'row': 'B', 'number': 10, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 9, 'status': 'available'}, {'row': 'C', 'number': 10, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 9, 'status': 'available'}, {'row': 'D', 'number': 10, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 9, 'status': 'available'}, {'row': 'E', 'number': 10, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 9, 'status': 'available'}, {'row': 'F', 'number': 10, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 9, 'status': 'available'}, {'row': 'G', 'number': 10, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}, {'row': 'H', 'number': 5, 'status': 'available'}, {'row': 'H', 'number': 6, 'status': 'available'}, {'row': 'H', 'number': 7, 'status': 'available'}, {'row': 'H', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 9, 'status': 'available'}, {'row': 'H', 'number': 10, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.091Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:15.642Z', 'id': '68fbb6b7db724fb5eded0ee6'}, {'_id': '68fbb6b7db724fb5eded0ee7', 'movie': {'_id': '68fbb6b6db724fb5eded0edb', 'title': 'Inception', 'duration': 148, 'poster': 'inception.jpg', 'id': '68fbb6b6db724fb5eded0edb'}, 'theater': {'_id': '68fbb6b7db724fb5eded0ee0', 'name': 'Theater 2', 'type': '3D', 'id': '68fbb6b7db724fb5eded0ee0'}, 'datetime': '2025-10-24T19:00:00.000Z', 'fullPrice': 15, 'halfPrice': 7.5, 'seats': [{'row': 'A', 'number': 1, 'status': 'available'}, {'row': 'A', 'number': 2, 'status': 'available'}, {'row': 'A', 'number': 3, 'status': 'available'}, {'row': 'A', 'number': 4, 'status': 'available'}, {'row': 'A', 'number': 5, 'status': 'available'}, {'row': 'A', 'number': 6, 'status': 'available'}, {'row': 'A', 'number': 7, 'status': 'available'}, {'row': 'A', 'number': 8, 'status': 'available'}, {'row': 'A', 'number': 9, 'status': 'available'}, {'row': 'A', 'number': 10, 'status': 'available'}, {'row': 'B', 'number': 1, 'status': 'available'}, {'row': 'B', 'number': 2, 'status': 'available'}, {'row': 'B', 'number': 3, 'status': 'available'}, {'row': 'B', 'number': 4, 'status': 'available'}, {'row': 'B', 'number': 5, 'status': 'available'}, {'row': 'B', 'number': 6, 'status': 'available'}, {'row': 'B', 'number': 7, 'status': 'available'}, {'row': 'B', 'number': 8, 'status': 'available'}, {'row': 'B', 'number': 9, 'status': 'available'}, {'row': 'B', 'number': 10, 'status': 'available'}, {'row': 'C', 'number': 1, 'status': 'available'}, {'row': 'C', 'number': 2, 'status': 'available'}, {'row': 'C', 'number': 3, 'status': 'available'}, {'row': 'C', 'number': 4, 'status': 'available'}, {'row': 'C', 'number': 5, 'status': 'available'}, {'row': 'C', 'number': 6, 'status': 'available'}, {'row': 'C', 'number': 7, 'status': 'available'}, {'row': 'C', 'number': 8, 'status': 'available'}, {'row': 'C', 'number': 9, 'status': 'available'}, {'row': 'C', 'number': 10, 'status': 'available'}, {'row': 'D', 'number': 1, 'status': 'available'}, {'row': 'D', 'number': 2, 'status': 'available'}, {'row': 'D', 'number': 3, 'status': 'available'}, {'row': 'D', 'number': 4, 'status': 'available'}, {'row': 'D', 'number': 5, 'status': 'available'}, {'row': 'D', 'number': 6, 'status': 'available'}, {'row': 'D', 'number': 7, 'status': 'available'}, {'row': 'D', 'number': 8, 'status': 'available'}, {'row': 'D', 'number': 9, 'status': 'available'}, {'row': 'D', 'number': 10, 'status': 'available'}, {'row': 'E', 'number': 1, 'status': 'available'}, {'row': 'E', 'number': 2, 'status': 'available'}, {'row': 'E', 'number': 3, 'status': 'available'}, {'row': 'E', 'number': 4, 'status': 'available'}, {'row': 'E', 'number': 5, 'status': 'available'}, {'row': 'E', 'number': 6, 'status': 'available'}, {'row': 'E', 'number': 7, 'status': 'available'}, {'row': 'E', 'number': 8, 'status': 'available'}, {'row': 'E', 'number': 9, 'status': 'available'}, {'row': 'E', 'number': 10, 'status': 'available'}, {'row': 'F', 'number': 1, 'status': 'available'}, {'row': 'F', 'number': 2, 'status': 'available'}, {'row': 'F', 'number': 3, 'status': 'available'}, {'row': 'F', 'number': 4, 'status': 'available'}, {'row': 'F', 'number': 5, 'status': 'available'}, {'row': 'F', 'number': 6, 'status': 'available'}, {'row': 'F', 'number': 7, 'status': 'available'}, {'row': 'F', 'number': 8, 'status': 'available'}, {'row': 'F', 'number': 9, 'status': 'available'}, {'row': 'F', 'number': 10, 'status': 'available'}, {'row': 'G', 'number': 1, 'status': 'available'}, {'row': 'G', 'number': 2, 'status': 'available'}, {'row': 'G', 'number': 3, 'status': 'available'}, {'row': 'G', 'number': 4, 'status': 'available'}, {'row': 'G', 'number': 5, 'status': 'available'}, {'row': 'G', 'number': 6, 'status': 'available'}, {'row': 'G', 'number': 7, 'status': 'available'}, {'row': 'G', 'number': 8, 'status': 'available'}, {'row': 'G', 'number': 9, 'status': 'available'}, {'row': 'G', 'number': 10, 'status': 'available'}, {'row': 'H', 'number': 1, 'status': 'available'}, {'row': 'H', 'number': 2, 'status': 'available'}, {'row': 'H', 'number': 3, 'status': 'available'}, {'row': 'H', 'number': 4, 'status': 'available'}, {'row': 'H', 'number': 5, 'status': 'available'}, {'row': 'H', 'number': 6, 'status': 'available'}, {'row': 'H', 'number': 7, 'status': 'available'}, {'row': 'H', 'number': 8, 'status': 'available'}, {'row': 'H', 'number': 9, 'status': 'available'}, {'row': 'H', 'number': 10, 'status': 'available'}], 'createdAt': '2025-10-24T17:26:15.094Z', '__v': 0, 'updatedAt': '2025-10-24T17:26:15.643Z', 'id': '68fbb6b7db724fb5eded0ee7'}]</msg>
+<arg>${movie_sessions}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-24T16:07:53.126101" elapsed="0.001026"/>
+</kw>
+<doc>Testa se a API retorna sessões de um filme específico usando filtro por movieId</doc>
+<status status="PASS" start="2025-10-24T16:07:52.611027" elapsed="0.516375"/>
+</test>
+<status status="PASS" start="2025-10-24T16:07:51.902127" elapsed="1.225991"/>
+</suite>
+<status status="PASS" start="2025-10-24T16:07:35.160767" elapsed="17.968467"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Ui &amp; Movies Ui &amp; Booking Flow &amp; Auth Api &amp; Sessions Api" id="s1" pass="10" fail="0" skip="0">Login Ui &amp; Movies Ui &amp; Booking Flow &amp; Auth Api &amp; Sessions Api</stat>
+<stat name="Login Ui" id="s1-s1" pass="1" fail="0" skip="0">Login Ui &amp; Movies Ui &amp; Booking Flow &amp; Auth Api &amp; Sessions Api.Login Ui</stat>
+<stat name="Movies Ui" id="s1-s2" pass="2" fail="0" skip="0">Login Ui &amp; Movies Ui &amp; Booking Flow &amp; Auth Api &amp; Sessions Api.Movies Ui</stat>
+<stat name="Booking Flow" id="s1-s3" pass="1" fail="0" skip="0">Login Ui &amp; Movies Ui &amp; Booking Flow &amp; Auth Api &amp; Sessions Api.Booking Flow</stat>
+<stat name="Auth Api" id="s1-s4" pass="3" fail="0" skip="0">Login Ui &amp; Movies Ui &amp; Booking Flow &amp; Auth Api &amp; Sessions Api.Auth Api</stat>
+<stat name="Sessions Api" id="s1-s5" pass="3" fail="0" skip="0">Login Ui &amp; Movies Ui &amp; Booking Flow &amp; Auth Api &amp; Sessions Api.Sessions Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
