@@ -1,167 +1,236 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-24T16:33:52.906928" rpa="false" schemaversion="5">
-<suite id="s1" name="Negative Tests Api" source="C:\Users\emanu\Downloads\cinema-tests\tests\api\negative_tests_api.robot">
-<test id="s1-t1" name="Buscar Recurso Inexistente" line="24">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-10-24T16:33:53.021881" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-10-24T16:33:53.021659" elapsed="0.000414"/>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-28T14:58:05.579459" rpa="false" schemaversion="5">
+<suite id="s1" name="Register Login Flow" source="C:\Users\emanu\Downloads\cinema-tests\automation-project\tests\ui\register_login_flow.robot">
+<test id="s1-t1" name="Fluxo Completo de Cadastro, Login e Logout" line="14">
+<kw name="Configurar Teste" type="SETUP">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-28T14:58:05.748401" level="INFO">${TIMESTAMP} = 20251028145805</msg>
+<var>${TIMESTAMP}</var>
+<arg>result_format=%Y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-28T14:58:05.748115" elapsed="0.000323"/>
 </kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-10-24T16:33:53.160359" level="INFO">GET Request : url=http://localhost:3000/api/v1/movies/000000000000000000000000 
- path_url=/api/v1/movies/000000000000000000000000 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2025-10-24T16:33:53.160542" level="INFO">GET Response : url=http://localhost:3000/api/v1/movies/000000000000000000000000 
- status=404, reason=Not Found 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '45', 'ETag': 'W/"2d-76yzoZ3aJF1oDN8vFKpqErDRmpM"', 'Date': 'Fri, 24 Oct 2025 19:33:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"success":false,"message":"Movie not found"} 
- </msg>
-<msg time="2025-10-24T16:33:53.160706" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/movies/000000000000000000000000</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.022342" elapsed="0.138391"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-28T14:58:05.748786" level="INFO">${EMAIL_UNICO} = testefluxo20251028145805@teste.com</msg>
+<var>${EMAIL_UNICO}</var>
+<arg>testefluxo${TIMESTAMP}@teste.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-28T14:58:05.748569" elapsed="0.000252"/>
 </kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-10-24T16:33:53.162443" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>404</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.161952" elapsed="0.000551"/>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-10-28T14:58:05.749117" level="INFO">${EMAIL_UNICO} = testefluxo20251028145805@teste.com</msg>
+<arg>${EMAIL_UNICO}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-10-28T14:58:05.748926" elapsed="0.000229"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-24T16:33:53.163090" level="INFO">{'success': False, 'message': 'Movie not found'}</msg>
-<arg>${response.json()}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.162724" elapsed="0.000403"/>
+<kw name="New Browser" owner="Browser">
+<msg time="2025-10-28T14:58:05.749931" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\emanu\\Downloads\\cinema-tests\\automation-project\\browser\\traces\\temp\\fcd29eb0-ca3f-402c-8154-2c65e0990c42"}</msg>
+<msg time="2025-10-28T14:58:05.777333" level="INFO">Starting Browser process C:\Users\emanu\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:65127</msg>
+<msg time="2025-10-28T14:58:07.115396" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\emanu\\Downloads\\cinema-tests\\automation-project\\browser\\traces\\temp\\fcd29eb0-ca3f-402c-8154-2c65e0990c42"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-10-28T14:58:05.749254" elapsed="1.366533"/>
 </kw>
-<doc>Testa se a API retorna 404 ao buscar recurso que não existe</doc>
-<status status="PASS" start="2025-10-24T16:33:53.020322" elapsed="0.143066"/>
+<kw name="New Context" owner="Browser">
+<msg time="2025-10-28T14:58:07.119333" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  }
+}</msg>
+<msg time="2025-10-28T14:58:07.145672" level="INFO">Successfully created context. </msg>
+<msg time="2025-10-28T14:58:07.145785" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1920, 'height': 1080}}</msg>
+<arg>viewport={'width': 1920, 'height': 1080}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-10-28T14:58:07.116118" elapsed="0.029758"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-10-28T14:58:07.678606" level="INFO">Successfully initialized new page object and opened url: http://localhost:3002/register</msg>
+<arg>${FRONT_URL}register</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-10-28T14:58:07.146104" elapsed="0.533001"/>
+</kw>
+<status status="PASS" start="2025-10-28T14:58:05.747403" elapsed="1.931989"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-28T14:58:07.680924" level="INFO">Fills the text 'Usuario Teste' in the given field.</msg>
+<arg>id=name</arg>
+<arg>${NAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-28T14:58:07.679850" elapsed="0.125476"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-28T14:58:07.806632" level="INFO">Fills the text 'testefluxo20251028145805@teste.com' in the given field.</msg>
+<arg>id=email</arg>
+<arg>${EMAIL_UNICO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-28T14:58:07.805737" elapsed="0.020559"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-28T14:58:07.827968" level="INFO">Fills the text 'teste123' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-28T14:58:07.826838" elapsed="0.016124"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-28T14:58:07.844048" level="INFO">Fills the text 'teste123' in the given field.</msg>
+<arg>id=confirmPassword</arg>
+<arg>${PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-28T14:58:07.843346" elapsed="0.013660"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-28T14:58:07.857924" level="INFO">Clicks the element 'css=button.btn.btn-primary'.</msg>
+<arg>css=button.btn.btn-primary</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-28T14:58:07.857341" elapsed="0.132940"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-28T14:58:08.237322" level="INFO">Waited for Element with selector text="Conta criada com sucesso!" at state visible</msg>
+<arg>text="Conta criada com sucesso!"</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-28T14:58:07.990598" elapsed="0.247010"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-28T14:58:08.239111" level="INFO">Clicks the element 'css=button.btn-logout'.</msg>
+<arg>css=button.btn-logout</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.238167" elapsed="0.120005"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-28T14:58:08.364287" level="INFO">Waited for Element with selector css=button.login-btn at state visible</msg>
+<arg>css=button.login-btn</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.358510" elapsed="0.005945"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-28T14:58:08.365387" level="INFO">Fills the text 'testefluxo20251028145805@teste.com' in the given field.</msg>
+<arg>id=email</arg>
+<arg>${EMAIL_UNICO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.364878" elapsed="0.014838"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-10-28T14:58:08.381675" level="INFO">Fills the text 'teste123' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.380152" elapsed="0.032227"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-10-28T14:58:08.413694" level="INFO">Clicks the element 'css=button.login-btn'.</msg>
+<arg>css=button.login-btn</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.412875" elapsed="0.054941"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-10-28T14:58:08.679245" level="INFO">Waited for Element with selector text="Login realizado com sucesso!" at state visible</msg>
+<arg>text="Login realizado com sucesso!"</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.468269" elapsed="0.211213"/>
+</kw>
+<kw name="Finalizar Teste" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Take Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.680579" elapsed="0.000148"/>
+</kw>
+<kw name="Close Page" owner="Browser">
+<msg time="2025-10-28T14:58:08.686713" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2025-10-28T14:58:08.690530" level="INFO">Returned active browser id. CURRENT</msg>
+<msg time="2025-10-28T14:58:08.691255" level="INFO">Switching browser to browser=bf35a485-e991-44b8-ab8f-431ce8eafe95</msg>
+<msg time="2025-10-28T14:58:08.694897" level="INFO">Successfully changed active browser: browser=bf35a485-e991-44b8-ab8f-431ce8eafe95</msg>
+<msg time="2025-10-28T14:58:08.695306" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2025-10-28T14:58:08.699821" level="INFO">Returned active context id: CURRENT</msg>
+<msg time="2025-10-28T14:58:08.699992" level="INFO">Switching context to context=5c7bb411-536b-427d-a828-66b75348cb76 in CURRENT</msg>
+<msg time="2025-10-28T14:58:08.707116" level="INFO">Successfully changed active context: context=5c7bb411-536b-427d-a828-66b75348cb76</msg>
+<msg time="2025-10-28T14:58:08.722252" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.680842" elapsed="0.042142"/>
+</kw>
+<kw name="Close Context" owner="Browser">
+<msg time="2025-10-28T14:58:08.728728" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2025-10-28T14:58:08.733992" level="INFO">Returned active browser id. CURRENT</msg>
+<msg time="2025-10-28T14:58:08.738446" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2025-10-28T14:58:08.741555" level="INFO">Returned active context id: CURRENT</msg>
+<msg time="2025-10-28T14:58:08.742736" level="INFO">Switching context to context=5c7bb411-536b-427d-a828-66b75348cb76 in CURRENT</msg>
+<msg time="2025-10-28T14:58:08.754330" level="INFO">Successfully changed active context: context=5c7bb411-536b-427d-a828-66b75348cb76</msg>
+<msg time="2025-10-28T14:58:08.768478" level="INFO">Successfully closed Context</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.723380" elapsed="0.045487"/>
+</kw>
+<status status="PASS" start="2025-10-28T14:58:08.680096" elapsed="0.089009"/>
+</kw>
+<doc>Testa o cadastro de um novo usuário, logout e novo login</doc>
+<status status="PASS" start="2025-10-28T14:58:05.746511" elapsed="3.023151"/>
 </test>
-<test id="s1-t2" name="Enviar Payload Inválido" line="31">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-10-24T16:33:53.165056" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-10-24T16:33:53.164936" elapsed="0.000250"/>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-10-28T14:58:08.979821" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-10-28T14:58:08.780625" elapsed="0.199373"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-10-24T16:33:53.165599" level="INFO">&amp;{body} = { invalid_field=xyz }</msg>
-<var>&amp;{body}</var>
-<arg>invalid_field=xyz</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.165357" elapsed="0.000268"/>
-</kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2025-10-24T16:33:53.298942" level="INFO">POST Request : url=http://localhost:3000/api/v1/auth/login 
- path_url=/api/v1/auth/login 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '24', 'Content-Type': 'application/json'} 
- body=b'{"invalid_field": "xyz"}' 
- </msg>
-<msg time="2025-10-24T16:33:53.299020" level="INFO">POST Response : url=http://localhost:3000/api/v1/auth/login 
- status=401, reason=Unauthorized 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '55', 'ETag': 'W/"37-5uDpJTljPBecOPs/j7OXFdPRcmQ"', 'Date': 'Fri, 24 Oct 2025 19:33:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"success":false,"message":"Invalid email or password"} 
- </msg>
-<msg time="2025-10-24T16:33:53.299134" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/auth/login</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.165809" elapsed="0.133348"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-10-24T16:33:53.300024" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>401</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.299524" elapsed="0.000566"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-24T16:33:53.300833" level="INFO">{'success': False, 'message': 'Invalid email or password'}</msg>
-<arg>${response.json()}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.300386" elapsed="0.000499"/>
-</kw>
-<doc>Testa se a API retorna 401 ao enviar payload inválido</doc>
-<status status="PASS" start="2025-10-24T16:33:53.164485" elapsed="0.136610"/>
-</test>
-<test id="s1-t3" name="Token Expirado Ou Inválido" line="39">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-10-24T16:33:53.302501" level="INFO">Creating Session using : alias=api, url=http://localhost:3000/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-10-24T16:33:53.302298" elapsed="0.000353"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-10-24T16:33:53.303237" level="INFO">&amp;{headers} = { Authorization=Bearer invalidtoken123 }</msg>
-<var>&amp;{headers}</var>
-<arg>Authorization=Bearer ${INVALID_TOKEN}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.302952" elapsed="0.000309"/>
-</kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-10-24T16:33:53.306814" level="INFO">GET Request : url=http://localhost:3000/api/v1/reservations/me 
- path_url=/api/v1/reservations/me 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer invalidtoken123'} 
- body=None 
- </msg>
-<msg time="2025-10-24T16:33:53.306913" level="INFO">GET Response : url=http://localhost:3000/api/v1/reservations/me 
- status=401, reason=Unauthorized 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '65', 'ETag': 'W/"41-TJq3LYiwj1On+7IZ17oLU5tM1Zs"', 'Date': 'Fri, 24 Oct 2025 19:33:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"success":false,"message":"Not authorized to access this route"} 
- </msg>
-<msg time="2025-10-24T16:33:53.307023" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/reservations/me</arg>
-<arg>headers=${headers}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.303527" elapsed="0.003519"/>
-</kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-10-24T16:33:53.308026" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>401</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.307549" elapsed="0.000528"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-24T16:33:53.308688" level="INFO">{'success': False, 'message': 'Not authorized to access this route'}</msg>
-<arg>${response.json()}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-24T16:33:53.308311" elapsed="0.000414"/>
-</kw>
-<doc>Testa se a API retorna 401 ao acessar recurso protegido com token inválido</doc>
-<status status="PASS" start="2025-10-24T16:33:53.301558" elapsed="0.007351"/>
-</test>
-<status status="PASS" start="2025-10-24T16:33:52.908502" elapsed="0.401166"/>
+<status status="PASS" start="2025-10-28T14:58:05.580970" elapsed="3.399113"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Negative Tests Api" id="s1" pass="3" fail="0" skip="0">Negative Tests Api</stat>
+<stat name="Register Login Flow" id="s1" pass="1" fail="0" skip="0">Register Login Flow</stat>
 </suite>
 </statistics>
 <errors>

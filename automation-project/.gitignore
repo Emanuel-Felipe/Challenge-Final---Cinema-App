@@ -1,0 +1,17 @@
+# Robot Framework results and logs
+results*/
+log*.html
+report*.html
+output.xml
+playwright-log.txt
+
+# Browser traces and screenshots
+browser/
+**/browser/
+**/traces/
+**/screenshot/
+
+# Temporary files
+*.pyc
+__pycache__/
+.DS_Store
