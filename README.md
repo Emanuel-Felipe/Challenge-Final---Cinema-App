@@ -62,7 +62,7 @@ Antes de executar os testes, verifique se os seguintes componentes estão instal
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/<seu-usuario>/cinema-tests.git
+git clone https://github.com/Emanuel-Felipe/Challenge-Final---Cinema-App.git
 cd cinema-tests
 ```
 
