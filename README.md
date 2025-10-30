@@ -66,25 +66,12 @@ git clone https://github.com/<seu-usuario>/cinema-tests.git
 cd cinema-tests
 ```
 
-2. Crie e ative o ambiente virtual (opcional, mas recomendado):
-```bash
-python -m venv venv
-# Linux / macOS
-source venv/bin/activate
-
-# Windows (PowerShell)
-venv\Scripts\Activate.ps1
-
-# Windows (cmd)
-venv\Scripts\activate
-```
-
-3. Instale as dependências:
+2. Instale as dependências:
 ```bash
 pip install robotframework robotframework-browser robotframework-requests
 ```
 
-4. Inicialize o Playwright para o Robot Framework:
+3. Inicialize o Playwright para o Robot Framework:
 ```bash
 rfbrowser init
 ```
