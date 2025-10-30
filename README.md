@@ -146,8 +146,8 @@ Na pasta `Documentação/` estão disponíveis os artefatos produzidos:
 ## 🧠 Boas Práticas e Arquitetura
 - Estrutura modular e escalável
 - Keywords reutilizáveis e bem documentadas
-- Testes independentes e idempotentes
-- Identificadores dinâmicos (evitam conflitos entre execuções)
+- Testes independentes
+- Identificadores dinâmicos para evitar conflitos entre execuções
 - Captura automática de screenshots em falhas
 - Padronização de asserts e mensagens de log
 - Integração facilitada com pipelines CI/CD
