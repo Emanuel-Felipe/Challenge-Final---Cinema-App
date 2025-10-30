@@ -136,10 +136,10 @@ Na pasta `Documentação/` estão disponíveis os artefatos produzidos:
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| Mapa Mental - Cinema App.pdf | Estrutura funcional e lógica do sistema |
-| Plano de Testes - Cinema App.pdf | Estratégia de testes, escopo e priorização |
-| Relatório Técnico de Automação de Testes – Sistema Cinema.pdf | Descrição detalhada dos testes desenvolvidos |
-| Relatório de Issues e Melhorias - Cinema App.pdf | Lista de bugs e sugestões de melhoria |
+| Mapa Mental - Cinema App | Estrutura funcional e lógica do sistema |
+| Plano de Testes - Cinema App | Estratégia de testes, escopo e priorização |
+| Relatório Técnico de Automação de Testes – Sistema Cinema | Descrição detalhada dos testes desenvolvidos |
+| Relatório de Issues e Melhorias - Cinema App | Lista de bugs e sugestões de melhoria |
 
 ---
 
