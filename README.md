@@ -167,3 +167,9 @@ Na pasta `Documentação/` estão disponíveis os artefatos produzidos:
 Desenvolvido por: Emanuel Felipe Avelino Solva  
 Desafio: Cinema App – Projeto de Automação de Testes  
 Tecnologias: Robot Framework | Playwright | RequestsLibrary | Python
+
+---
+
+## 🌐 Automação Testada
+- https://github.com/juniorschmitz/cinema-challenge-back.git
+- https://github.com/juniorschmitz/cinema-challenge-front.git
